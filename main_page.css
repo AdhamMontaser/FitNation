@@ -1,0 +1,39 @@
+.navigation-bar {
+    /* border: 1pt black solid; */
+    /* text-align: center; */
+    background-color: transparent
+}
+.navigation-bar img {
+    display: inline-block;  
+    vertical-align: middle;
+    width: 10%;
+    /* margin-right:px; */
+}
+.navigation-bar ul {
+    margin: 0%;
+    padding: 0%;
+}
+.navigation-bar-options {
+    display: inline;
+    text-align: center;
+}
+.navigation-bar li{
+    transition: font-size, font-weight;
+    display: inline;
+    padding-left: 5%;
+    color: white;
+    font-size: 18pt;
+}
+.navigation-bar li :hover{
+    font-size: 24pt;
+    font-weight: bolder;
+}
+.navigation-bar a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-image: url(assets/img/background_image.png);
+    background-color: grey;
+}
