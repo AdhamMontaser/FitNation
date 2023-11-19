@@ -13,7 +13,7 @@ body {
     border: white solid 2pt;
     color: white;
     font-weight: 900;
-    transition: background-color 1s;
+    transition: background-color 0.25;
     letter-spacing: 2px;
 }
 .sign-in-button:hover {
