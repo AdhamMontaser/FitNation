@@ -1,0 +1,122 @@
+.navigation-bar {
+    padding-left: 2%;
+    padding-right: 2%;
+    align-items: start;
+    background-color: transparent;
+    display: inline;
+}
+
+.navigation-bar img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10%;
+}
+
+.navigation-bar ul {
+    margin: 0;
+    padding: 0;
+}
+.navigation-bar-logo, .navigation-bar-options li div{
+    display: inline;
+}
+
+.navigation-bar-options {
+    text-align: center;
+}
+
+.navigation-bar li {
+    transition: font-size, font-weight;
+    display: inline;
+    padding-left: 5%; /* Adjust as needed */
+    color: white;
+    font-size: 24px; /* Adjust as needed */
+}
+
+.navigation-bar li:hover {
+    font-size: 30px; /* Adjust as needed */
+    font-weight: bolder;
+}
+
+.navigation-bar a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-image: url(assets/img/background_image.png);
+    background-color: grey;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 600px) {
+    .navigation-bar li {
+        padding-left: 0;
+        display: block;
+        text-align: center;
+    }
+
+    .navigation-bar li:hover {
+        font-size: 14px;
+    }
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main_page.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="navigation-bar">
+        <ul>
+          <div class="navigation-bar-logo">
+            <li>
+              <img src="assets/img/fit_nation_logo.png" alt="logo" />
+            </li>
+          </div>
+          <div class="navigation-bar-options">
+            <li>
+              <div>
+                <a href="">Home</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a href="">About</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a href="">Courses</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a href="">Pricing</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a href="">Gallery</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a href="">Blog</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a href="">Contact</a>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>
+
