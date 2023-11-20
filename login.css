@@ -7,7 +7,7 @@ body, html {
   }
 
   .bg {
-    background-image: url("/assets/img/login_bg.jpg");
+    background-image: url("login_bg.jpg");
   
     height: 100%;
   
