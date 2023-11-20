@@ -4,21 +4,28 @@ body {
     margin: 0; /* Remove default margin to ensure the nav bar is flush with the edges */
 }
 .sign-in-button {
-    justify-content: right;
+    height: 55px;
     width: 180px;
-    height: 50px;
-    text-align: center;
-    vertical-align: middle;
-    background: #ff1313;
-    border: white solid 2pt;
+    text-transform: uppercase;
+    background: linear-gradient(to right, red 50%, darkred 50%);
+    background-size: 200% 100%;
     color: white;
-    font-weight: 900;
-    transition: background-color 0.25;
+    border: 2px solid white;
     letter-spacing: 2px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 18px;
+    transition: background-position 0.2s;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .sign-in-button:hover {
-    background-color: #C20505;
+    background-position: -100% 0;
 }
+
+
 .navigation-bar {
     display: flex;
     align-items: center;
