@@ -1,0 +1,111 @@
+body{
+    width: 90%;
+    height: 100%;
+}
+
+h1{
+    padding: 12px;
+    margin: -11px;
+}
+
+#bgImg{    
+     background-image: url("../assets/img/login_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center ;
+    background-attachment: fixed;
+}
+
+#divForm{
+    width: 411px;
+    height: 350px;
+    background-color: whitesmoke;
+    text-align: center;
+    margin: 14% 40%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.inputFirstRow{
+    margin: 10px 2px;
+    padding: 5px;
+    height: 30px;
+    width: 170px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* .inputSecRow{
+    margin: 10px 2px;
+    padding: 5px;
+    height: 30px;
+    width: 170px;
+    border-radius: 5px;
+    font-size: 18px;
+} */
+
+.password{
+    display: flex;
+    align-items: center;
+    margin: -1px 16px;
+}
+
+.inputPass{
+    margin: 10px 2px;
+    padding: 5px;
+    height: 30px;
+    width: 170px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#eye{
+    margin: -64px -41px;
+}
+
+.inputconfirmPass{
+    margin: 10px 59px;
+    padding: 5px;
+    height: 30px;
+    width: 170px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#confirmEye{
+    margin: -64px -96px;
+}
+
+.img{
+    cursor: pointer;
+    width: 29px;
+}
+
+#submit{
+    background-color: rgb(163, 159, 158);
+    border-radius: 5px;
+    width: 364px;
+    height: 40px;
+    border: unset;
+    font-weight: 700;
+    font-size: 18pt;
+    color: black;
+}
+
+#submit:hover{
+    background-color: #183D3D;
+    color: #ebe9e9;
+}
+
+hr{
+    margin: 11px 30px;
+}
+
+#login{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#login:hover{
+    text-decoration: underline;
+}
