@@ -5,21 +5,6 @@
     <link rel="stylesheet" href="css/signup.css" />
   </head>
 
-  <script>
-    let eyeicon = document.getElementById("eye");
-    let password = document.getElementById("password");
-
-    eyeicon.onclick = function () {
-      if (password.type === "password") {
-        password.type = "text";
-        eyeicon.src = "eye-open.png";
-      } else {
-        password.type = "password";
-        eyeicon.src = "eye-close.png";
-      }
-    };
-  </script>
-
   <body id="bgImg">
     <div id="divForm">
       <form action="" method="get">
@@ -47,7 +32,7 @@
           class="inputFirstRow"
           placeholder="Phone number"
           pattern="[0-9]*"
-          title="Please enter a valid phone number "
+          title="Please enter a valid phone number"
           required
         />
         <input
@@ -69,15 +54,11 @@
             required
           />
           <img src="assets/icons/eye-close.png" id="eye" class="img" />
-          <!-- 
-
-                    2l eye icon m4 4a8ala
-
-                 -->
           <input
             type="password"
             name="confirmpass"
             class="inputconfirmPass"
+            id="confirmPassword"
             placeholder="Confirm password"
             required
           /><br />
@@ -91,5 +72,37 @@
         <a href="login.html" id="login">Already have an account?</a>
       </form>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let eyeIcon = document.getElementById("eye");
+        let password = document.getElementById("password");
+
+        eyeIcon.onclick = function () {
+          if (password.type === "password") {
+            password.type = "text";
+            eyeIcon.src = "assets/icons/eye-open.png";
+          } else {
+            password.type = "password";
+            eyeIcon.src = "assets/icons/eye-close.png";
+          }
+        };
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let confirmEyeIcon = document.getElementById("confirmEye");
+        let confirmPassword = document.getElementById("confirmPassword");
+
+        confirmEyeIcon.onclick = function () {
+          if (confirmPassword.type === "password") {
+            confirmPassword.type = "text";
+            confirmEyeIcon.src = "assets/icons/eye-open.png";
+          } else {
+            confirmPassword.type = "password";
+            confirmEyeIcon.src = "assets/icons/eye-close.png";
+          }
+        };
+      });
+    </script>
   </body>
 </html>
