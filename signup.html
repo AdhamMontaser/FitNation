@@ -1,58 +1,95 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Sign Up</title>
-    <link rel="stylesheet" href="css/signup.css">
-</head>
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
 
-<script>
-let eyeicon = document.getElementById("eye");
-let password = document.getElementById("password");
+  <script>
+    let eyeicon = document.getElementById("eye");
+    let password = document.getElementById("password");
 
-eyeicon.onclick = function(){
-    if(password.type === "password"){
+    eyeicon.onclick = function () {
+      if (password.type === "password") {
         password.type = "text";
         eyeicon.src = "eye-open.png";
-    } else {
+      } else {
         password.type = "password";
         eyeicon.src = "eye-close.png";
-    }
-}
-</script>
+      }
+    };
+  </script>
 
-<body id="bgImg">
-
+  <body id="bgImg">
     <div id="divForm">
-        <form action="" method="get">
-            <h1>TEST</h1><br>
+      <form action="" method="get">
+        <h1>TEST</h1>
+        <br />
 
-            <input type="text" name="fname" class="inputFirstRow"  placeholder="First Name" autofocus required>
-            <input type="text" name="sname" class="inputFirstRow"  placeholder="Second Name" ><br>
+        <input
+          type="text"
+          name="fname"
+          class="inputFirstRow"
+          placeholder="First Name"
+          autofocus
+          required
+        />
+        <input
+          type="text"
+          name="sname"
+          class="inputFirstRow"
+          placeholder="Second Name"
+        /><br />
 
-            <input type="tel" name="number" class="inputFirstRow" placeholder="Phone number" pattern="[0-9]*" 
-                title="Please enter a valid phone number " required>
-            <input type="email" name="email" class="inputFirstRow" placeholder="Email" 
-                pattern="[a-z0-9._%+-]{1,20}@[a-z0-9.-]{1,8}\.[a-z]{2,5}" required><br>
+        <input
+          type="tel"
+          name="number"
+          class="inputFirstRow"
+          placeholder="Phone number"
+          pattern="[0-9]*"
+          title="Please enter a valid phone number "
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          class="inputFirstRow"
+          placeholder="Email"
+          pattern="[a-z0-9._%+-]{1,20}@[a-z0-9.-]{1,8}\.[a-z]{2,5}"
+          required
+        /><br />
 
-            <div class="password">
-                <input type="password" name="pass" id="password" class="inputPass" placeholder="Password" required>
-                <img src="assets/img/eye-close.png" id="eye" class="img">
-                <!-- 
+        <div class="password">
+          <input
+            type="password"
+            name="pass"
+            id="password"
+            class="inputPass"
+            placeholder="Password"
+            required
+          />
+          <img src="assets/icons/eye-close.png" id="eye" class="img" />
+          <!-- 
 
                     2l eye icon m4 4a8ala
 
                  -->
-                <input type="password" name="confirmpass" class="inputconfirmPass" placeholder="Confirm password" required><br>
-                <img src="assets/img/eye-close.png" id="confirmEye" class="img">
+          <input
+            type="password"
+            name="confirmpass"
+            class="inputconfirmPass"
+            placeholder="Confirm password"
+            required
+          /><br />
+          <img src="assets/icons/eye-close.png" id="confirmEye" class="img" />
+        </div>
 
-            </div>
+        <input type="submit" value="let's go" id="submit" /><br />
 
-            <input type="submit" value="let's go" id="submit"><br>
+        <hr />
 
-            <hr>
-
-            <a href="login.html" id="login">Already have an account?</a>
-        </form>
+        <a href="login.html" id="login">Already have an account?</a>
+      </form>
     </div>
-</body>
+  </body>
 </html>
