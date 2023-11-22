@@ -1,94 +1,86 @@
-body{
-    width: 90%;
-    height: 100%;
+html{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin-top: -8px;
+    margin-right: -13px;
+    font-family: 'Oswald', sans-serif;
 }
 
-h1{
+body{
+    width: 99%;
+    height: 100%;
+    display: flex;
+}
+
+#divForm{
+    width: 68%;
+    padding-top: 169px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#h1Up{
     padding: 12px;
     margin: -11px;
 }
 
-#bgImg{    
-     background-image: url("../assets/img/login_bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right center ;
-    background-attachment: fixed;
-}
-
-#divForm{
-    width: 411px;
-    height: 350px;
-    background-color: whitesmoke;
-    text-align: center;
-    margin: 14% 40%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .inputFirstRow{
-    margin: 10px 2px;
+    margin: 12px 22px;
     padding: 5px;
-    height: 30px;
-    width: 170px;
-    border-radius: 5px;
-    font-size: 18px;
+    height: 48px;
+    width: 280px;
+    border-radius: 20px;
+    font-size: 21px;
 }
 
-/* .inputSecRow{
-    margin: 10px 2px;
-    padding: 5px;
-    height: 30px;
-    width: 170px;
-    border-radius: 5px;
-    font-size: 18px;
-} */
-
-.password{
+.passdiv{
     display: flex;
     align-items: center;
-    margin: -1px 16px;
 }
 
 .inputPass{
-    margin: 10px 2px;
+    margin-top: 12px;
+    margin-left: 204px;
     padding: 5px;
-    height: 30px;
-    width: 170px;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-#eye{
-    margin: -64px -41px;
+    height: 48px;
+    width: 280px;
+    border-radius: 20px;
+    font-size: 21px;
 }
 
 .inputconfirmPass{
-    margin: 10px 59px;
+    margin-top: 12px;
+    margin-left: 50px;
     padding: 5px;
-    height: 30px;
-    width: 170px;
-    border-radius: 5px;
-    font-size: 16px;
+    height: 48px;
+    width: 280px;
+    border-radius: 20px;
+    font-size: 21px;
+}
+
+#eye{
+    cursor: pointer;
+    width: 33px;
+    margin: -121px 446px;
+    display: flex;
 }
 
 #confirmEye{
-    margin: -64px -96px;
-}
-
-.img{
     cursor: pointer;
-    width: 29px;
+    width: 33px;
+    margin: 95px 793px;
+    display: flex;
 }
 
 #submit{
     background-color: rgb(163, 159, 158);
-    border-radius: 5px;
-    width: 364px;
-    height: 40px;
+    margin-top: 27px;
+    border-radius: 17px;
+    width: 636px;
+    height: 51px;
     border: unset;
     font-weight: 700;
-    font-size: 18pt;
+    font-size: 24pt;
     color: black;
 }
 
@@ -97,15 +89,36 @@ h1{
     color: #ebe9e9;
 }
 
-hr{
-    margin: 11px 30px;
+#divsignin{
+    width: 488px;
+    height: 747px;
+    background: linear-gradient(315deg, rgba(189,0,0,1) 9%, rgba(0,0,0,1) 43%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 }
 
-#login{
+#h1In{
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    padding-top: 227px;
+}
+
+.btn {
+    margin: 10px;
+    padding: 18px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 15px;
     text-decoration: none;
-    font-size: 18px;
+}
+    
+.btn:hover {
+    background-position: right center;
 }
 
-#login:hover{
-    text-decoration: underline;
+.btn-1 {
+    background-image: linear-gradient(135deg, rgb(255, 0, 0) 0%, rgba(18,18,18,1) 100%);
 }
