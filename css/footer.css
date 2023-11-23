@@ -1,0 +1,61 @@
+/* Footer CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer {
+   padding: 70px 20px;
+   background-color: black;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+
+}
+
+.container {
+    max-width: 1170px;
+    background-color: inherit;
+    margin: auto;
+}
+.footer ul {
+    list-style: none;
+}
+
+.body {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-column {
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-column h4 {
+    font-size: 150%;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-column h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: rgb(255, 30, 0);
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+
+
