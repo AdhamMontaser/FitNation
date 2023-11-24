@@ -5,10 +5,11 @@
     <link rel="stylesheet" href="css/signup.css" />
   </head>
 
-  <body id="bgImg">
+  <body>
+
     <div id="divForm">
       <form action="" method="get">
-        <h1>TEST</h1>
+        <h1 id="h1Up">logo</h1>
         <br />
 
         <input
@@ -44,7 +45,7 @@
           required
         /><br />
 
-        <div class="password">
+        <div class="passdiv">
           <input
             type="password"
             name="pass"
@@ -53,7 +54,7 @@
             placeholder="Password"
             required
           />
-          <img src="assets/icons/eye-close.png" id="eye" class="img" />
+          
           <input
             type="password"
             name="confirmpass"
@@ -61,16 +62,21 @@
             id="confirmPassword"
             placeholder="Confirm password"
             required
-          /><br />
-          <img src="assets/icons/eye-close.png" id="confirmEye" class="img" />
+          />
         </div>
-
+        
         <input type="submit" value="let's go" id="submit" /><br />
+        
+          <img src="assets/icons/eye-close.png" id="eye" class="img" />
+          <img src="assets/icons/eye-close.png" id="confirmEye" class="img" />
 
-        <hr />
-
-        <a href="login.html" id="login">Already have an account?</a>
       </form>
+    </div>
+
+    <div id="divsignin">
+      <h1 id="h1In">Already have an account?</h1>
+
+      <a href="login.html" class="btn btn-1">SIGN IN</a>
     </div>
 
     <script>
