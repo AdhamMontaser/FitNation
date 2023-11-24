@@ -15,8 +15,11 @@ body{
 #divForm{
     width: 68%;
     padding-top: 169px;
+    margin-left: -8px;
     text-align: center;
-    border-radius: 10px;
+    background-image: url(../assets/img/SignUp_Background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #h1Up{
@@ -31,6 +34,7 @@ body{
     width: 280px;
     border-radius: 20px;
     font-size: 21px;
+    /* border: none; */
 }
 
 .passdiv{
@@ -76,6 +80,7 @@ body{
     background-color: rgb(163, 159, 158);
     margin-top: 27px;
     border-radius: 17px;
+    transition: 0.5s;
     width: 636px;
     height: 51px;
     border: unset;
@@ -90,11 +95,11 @@ body{
 }
 
 #divsignin{
-    width: 488px;
+    width: 495px;
     height: 747px;
-    background: linear-gradient(315deg, rgba(189,0,0,1) 9%, rgba(0,0,0,1) 43%);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(315deg, rgb(104, 1, 2) 12%, rgba(0,0,0,1) 43%);
     text-align: center;
+    /* border-left: solid 1px yellow; */
 }
 
 #h1In{
