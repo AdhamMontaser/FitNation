@@ -42,7 +42,7 @@ footer {
     font-size: 150%;
     color: white;
     text-transform: capitalize;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     font-weight: 500;
     position: relative;
 }
@@ -56,6 +56,51 @@ footer {
     box-sizing: border-box;
     width: 50px;
 }
+.footer-column ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.footer-column ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: gray;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
 
+.footer-column ul li a:hover {
+    color: gray;
+    padding-left: 10px;
+}
 
+.footer-column .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.footer-column .social-links a:hover {
+    color: white;
+    background-color: rgb(215, 59, 59);
+}
+
+@media(max-width : 767px){
+    .footer-column {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width : 574px) {
+    .footer-column {
+        width: 100%;
+    }
+}
 
