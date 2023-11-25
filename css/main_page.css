@@ -12,6 +12,8 @@ body {
     text-align: center;
     font-size: 250%;
     text-align: left;
+    text-transform: capitalize;
+    
 }
 .middle-spot .middle-button {
     margin-top: 20px;
@@ -24,7 +26,6 @@ body {
     border-radius: 8px;
     transition: background-position 0.5s;
     font-size: 50%;
-    text-transform: capitalize;
     font-weight: 600;
 }
 
@@ -35,7 +36,8 @@ body {
 
 .middle-text1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
+    -webkit-text-stroke: 1px #f6f7f8;
+    -webkit-text-fill-color: transparent;
 }
 .middle-text2 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
