@@ -1,8 +1,8 @@
 html{
     overflow-y: hidden;
     overflow-x: hidden;
-    margin-top: -8px;
-    margin-right: -13px;
+    margin-top: -1%;
+    margin-right: -1%;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -10,78 +10,82 @@ body{
     width: 99%;
     height: 100%;
     display: flex;
+    background-image: url(../assets/img/SignUp_Background.jpg);
+    background-size: 71% 100%;
+    background-repeat: no-repeat;
+
 }
 
 #divForm{
     width: 68%;
-    padding-top: 169px;
-    margin-left: -8px;
+    padding-top: 8%;
+    margin-left: -1%;
     text-align: center;
-    background-image: url(../assets/img/SignUp_Background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 #h1Up{
     padding: 12px;
     margin: -11px;
+    color: white;
 }
 
 .inputFirstRow{
-    margin: 12px 22px;
-    padding: 5px;
+    margin: 2% 2%;
+    padding: 1%;
     height: 48px;
     width: 280px;
     border-radius: 20px;
     font-size: 21px;
-    /* border: none; */
+    border: none;
 }
 
-.passdiv{
+.passDiv{
     display: flex;
     align-items: center;
 }
 
 .inputPass{
-    margin-top: 12px;
-    margin-left: 204px;
+    margin-top: 1%;
+    margin-left: 19%;
     padding: 5px;
     height: 48px;
-    width: 280px;
+    width: 286px;
     border-radius: 20px;
     font-size: 21px;
+    border: none;
 }
 
-.inputconfirmPass{
+.inputConfirmPass{
     margin-top: 12px;
     margin-left: 50px;
     padding: 5px;
     height: 48px;
-    width: 280px;
+    width: 286px;
     border-radius: 20px;
     font-size: 21px;
+    border: none;
 }
 
 #eye{
     cursor: pointer;
     width: 33px;
-    margin: -121px 446px;
+    margin: -11.5% 43%;
     display: flex;
 }
 
 #confirmEye{
     cursor: pointer;
     width: 33px;
-    margin: 95px 793px;
+    margin: 9.25% 76%;
     display: flex;
 }
 
 #submit{
-    background-color: rgb(163, 159, 158);
-    margin-top: 27px;
+    background-color: rgb(184 10 12);
+    margin-top: 2.5%;
     border-radius: 17px;
     transition: 0.5s;
-    width: 636px;
+    width: 61%;
     height: 51px;
     border: unset;
     font-weight: 700;
@@ -90,28 +94,28 @@ body{
 }
 
 #submit:hover{
-    background-color: #183D3D;
-    color: #ebe9e9;
+    background-color: #500101;
+    color: white;
 }
 
-#divsignin{
-    width: 495px;
-    height: 747px;
-    background: linear-gradient(315deg, rgb(104, 1, 2) 12%, rgba(0,0,0,1) 43%);
+#divSignIn{
+    width: 33%;
+    height: 757px;
+    background-image: linear-gradient(315deg, rgb(104, 1, 2) 12%, rgba(0,0,0,1) 43%);
     text-align: center;
-    /* border-left: solid 1px yellow; */
+    border-left: solid 2px rgb(74 0 1);
 }
 
 #h1In{
     color: white;
     font-weight: bold;
     font-size: 50px;
-    padding-top: 227px;
+    padding-top: 46%;
 }
 
 .btn {
-    margin: 10px;
-    padding: 18px;
+    font-size: 16pt;
+    padding: 3%;
     text-align: center;
     transition: 0.5s;
     background-size: 200% auto;
