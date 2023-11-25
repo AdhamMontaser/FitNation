@@ -24,6 +24,46 @@ body {
     font-size:60px;
     font-weight: 1000;
 }
+
+.middle-spot {
+    color: white;
+    width: 50%;
+    margin-top: 8%;
+    margin-left: 17%;
+    text-align: center;
+    font-size: 250%;
+    text-align: left;
+}
+.middle-spot .middle-button {
+    margin-top: 20px;
+    height: 70px;
+    width: 180px;
+    background: linear-gradient(to bottom, transparent 50%, red 50%);
+    background-size: 100% 200%;
+    color: white;
+    border: white 2px solid;
+    border-radius: 8px;
+    transition: background-position 0.5s;
+    font-size: 50%;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.middle-spot .middle-button:hover {
+    background-position: 0 -100%;
+}
+
+
+.middle-text1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.middle-text2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
 .sign-in-button {
     height: 55px;
     width: 180px;
