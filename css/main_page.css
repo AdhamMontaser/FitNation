@@ -3,6 +3,27 @@ body {
     background-color: grey;
     margin: 0; /* Remove default margin to ensure the nav bar is flush with the edges */
 }
+#pp{
+    width:fit-content;
+    text-transform: uppercase;
+    margin-left: 50px;
+    color:white;
+    
+}
+#p1 {
+    text-transform: uppercase;
+   color:rgba(255,255,255,0.4);
+    /*text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;*/
+    -webkit-text-stroke: 1px #f6f7f8;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+    font-weight: 900;
+  }
+  
+#p2{
+    font-size:60px;
+    font-weight: 1000;
+}
 .sign-in-button {
     height: 55px;
     width: 180px;
