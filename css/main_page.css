@@ -1,13 +1,13 @@
 body {
     background-image: url('../assets/img/background_image.png');
-    background-color: grey;
+    background-color: rgb(0, 0, 0);
     background-size: cover;
+    background-repeat: no-repeat;
     margin: 0; /* Remove default margin to ensure the nav bar is flush with the edges */
 }
 
 .middle-spot {
     color: white;
-   
     margin-top: 8%;
     margin-left: 17%;
     text-align: center;
@@ -90,14 +90,14 @@ body {
     height: 100px; /* Set a fixed height for the navigation bar */
     background-color: transparent;
     padding: 0% 5%; /* Add padding to the sides */
+    position: sticky;
 }
 
-#mm{
-    /*pt5aleha sabta el nav bar    bttt7rak m3 el 4a4a    */
-
+nav{
     position:sticky;
-    top:0;
+    top: 0;
 }
+
 .navigation-bar-logo {
     display: flex;
     align-items: center;
