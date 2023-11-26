@@ -18,9 +18,6 @@
     right: 45%;
     bottom: 35%;
     
-    
-
-
 
        
   }
@@ -77,18 +74,16 @@
         transition: border-bottom-color 0.3s ease;
         border-radius: 2px;
       }
+      
       #password:focus{
         border-bottom-color: red;
       }
+
       #rememberme{
-        
         font-size: 18px; 
         color: #f2e6e6;
-    
-    
-    
-    
       }
+
       #hline{
         margin: 15px 8px
       }
@@ -127,19 +122,19 @@
       #forgetpass:hover {
         color: white;
         
-        box-shadow: 0 0 20px rgba(209,137,5,0.6);
-        background-color: #d18905;
+        box-shadow: 0 0 20px rgba(122, 101, 101, 0.6);
+        background-color: rgb(183, 50, 38);
       }
       #createacc:hover {
         color: white;
         
-        box-shadow: 0 0 20px rgba(209,137,5,0.6);
-        background-color: #d18905;
+        box-shadow: 0 0 20px rgba(122, 101, 101, 0.6);
+        background-color: rgb(183, 50, 38);
       }
 
       #welcomeback{
          overflow: hidden;
-        border-right: .15em solid orange; 
+        border-right: .15em solid rgb(183, 50, 38);
         white-space: nowrap; 
         margin: 0 auto; 
         letter-spacing: .15em; 
@@ -160,7 +155,7 @@
           border-color: transparent;
         }
         50% {
-          border-color: orange;
+          border-color: rgb(183, 50, 38);
         }
       }
 
