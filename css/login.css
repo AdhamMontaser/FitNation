@@ -134,7 +134,7 @@
   border-right: 0.15em solid rgb(183, 50, 38);
   white-space: nowrap;
   margin: 0 auto;
-  width: inherit;
+  width: 45%;
   letter-spacing: 0.15em;
   animation: typing 1.5s steps(20, end), blink-caret 0.75s step-end infinite;
 }
