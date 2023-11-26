@@ -7,15 +7,30 @@ body {
 
 .middle-spot {
     color: white;
-    width: 50%;
+   
     margin-top: 8%;
     margin-left: 17%;
     text-align: center;
     font-size: 250%;
     text-align: left;
-    text-transform: capitalize;
-    
+    text-transform: uppercase;
+    transform: color 0.3s ;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: expandWidth 3s ease forwards;
 }
+@keyframes expandWidth {
+    from {
+      width: 0;
+    }
+    to {
+      width: 50%; /* Adjust the width as needed */
+    }
+  }
+  
+
+
 .middle-spot .middle-button {
     margin-top: 20px;
     height: 70px;
@@ -27,7 +42,7 @@ body {
     border-radius: 8px;
     transition: background-position 0.2s;
     font-size: 50%;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-weight: 600;
 }
 
@@ -77,6 +92,12 @@ body {
     padding: 0% 5%; /* Add padding to the sides */
 }
 
+#mm{
+    /*pt5aleha sabta el nav bar    bttt7rak m3 el 4a4a*/
+
+    position:sticky;
+    top:0;
+}
 .navigation-bar-logo {
     display: flex;
     align-items: center;
