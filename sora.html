@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .test {
+            position: relative;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .test .img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+        }
+
+        .test:hover .img {
+            transform: scale(1.2);
+        }
+
+        .test .overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: flex-end; /* Align button to the right */
+            align-items: flex-end; /* Align button to the bottom */
+            /*padding: 10px;  Add padding to the overlay for spacing      
+            law 3ayz yb2a feh msa7a ben el border bta3 el image wel button shel 3lamet el comment*/
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .test:hover .overlay {
+            opacity: 1;
+        }
+
+        .test .btn {
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .test .btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test">
+        <img src="C:\Users\Dell\Pictures\mostafa\Private\Pictures\Telegram\IMG_20230624_052724_923.jpg" alt="Snow" class="img">
+        <div class="overlay">
+            <div class="overlay-text">Gain Muscle</div>
+            <button class="btn">+</button>
+        </div>
+    </div>
+</body>
+</html>
