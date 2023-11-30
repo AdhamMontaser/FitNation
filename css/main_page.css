@@ -231,16 +231,51 @@ nav {
   background-position: 0 -100%;
 }
 
+/* Section 2 */
+#wif {
+  margin-top: 5%;
+}
+
+#wif-text-section {
+  text-align: center;
+  font-size: 7vh;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #f6f7f8;
+  -webkit-text-fill-color: transparent;
+}
+#wif-pics-section {
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.wif-pic-container {
+  display: inline-block;
+  margin: 50px 20px;
+  width: calc(25% - 40px);
+}
+.wif-pic img {
+  width: 100%;
+  height: auto;
+}
+.wif-cap {
+  color: white;
+  margin-top: 4%;
+  text-align: center;
+}
+.wif-cap h5 {
+  font-size: 4vh;
+  text-transform: uppercase;
+  margin-top: 2%;
+}
+.wif-cap p {
+  font-size: 2.5vh;
+  text-transform: capitalize;
+  margin-top: 2%;
+}
+
 /* Footer CSS */
 
 @import url("https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Poppins:wght@300;400;500;600;700&display=swap");
-
-footer {
-  clear: both;
-  line-height: 1.5;
-  font-family: "Poppins", sans-serif;
-  position: relative;
-}
 
 * {
   margin: 0;
@@ -248,9 +283,11 @@ footer {
   box-sizing: border-box;
 }
 .footer {
+  clear: both;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
   padding: 70px 20px;
   background-color: black;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
