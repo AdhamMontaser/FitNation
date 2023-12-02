@@ -42,14 +42,23 @@ form{
     color: white;
 }
 
-.inputFirstRow{
-    margin: 2% 2%;
+.input{
+    margin: 1% 2%;
     padding: 1%;
-    height: 48px;
+    height: 35px;
     width: 280px;
-    border-radius: 20px;
-    font-size: 21px;
+    color: white;
+    font-size: 20px;
+    background: none;
+    outline: none;
     border: none;
+    border-bottom: 2px solid #999;
+    border-radius: 2px;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.input:focus {
+    border-bottom-color: red;
 }
 
 .passDiv{
@@ -60,11 +69,28 @@ form{
     position: relative;
     right: -5%;
     padding: 1%;
-    height: 48px;
+    height: 35px;
     width: 279px;
-    border-radius: 20px;
-    font-size: 21px;
+    color: white;
+    font-size: 20px;
+    background: none;
+    outline: none;
     border: none;
+    border-bottom: 2px solid #999;
+    border-radius: 2px;
+    transition: border-bottom-color 0.3s ease;
+}
+
+/* .error { 
+    color: white;
+    background-color: rgb(184 10 12);
+    padding: 8px;
+    display: none;
+    width: 279px;
+} */
+
+.inputPass:focus {
+    border-bottom-color: red;
 }
 
 #eye{
@@ -82,13 +108,22 @@ form{
 .inputConfirmPass{
     position: relative;
     right: -2%;
-    margin: 2% 2%;
+    margin: 1% 2%;
     padding: 1%;
-    height: 48px;
+    height: 35px;
     width: 279px;
-    border-radius: 20px;
-    font-size: 21px;
+    color: white;
+    font-size: 20px;
+    background: none;
+    outline: none;
     border: none;
+    border-bottom: 2px solid #999;
+    border-radius: 2px;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.inputConfirmPass:focus {
+    border-bottom-color: red;
 }
 
 #confirmEye{

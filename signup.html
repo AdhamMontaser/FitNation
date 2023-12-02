@@ -7,38 +7,51 @@
 
   <body>
     <div id="divForm">
-      <form action="" method="post">
+      <form action="" method="post" id="signup-form">
         <h1 id="h1Up">logo</h1>
         <br />
+        
+        <input
+          type="text"
+          name="usname"
+          id="username"
+          class="input"
+          placeholder="Username"
+          autofocus
+          required
+        />
+        <!-- <p class="error username-error" style="display: none;">Please enter a username</p> -->
+        <br>
 
         <input
           type="text"
           name="fname"
-          class="inputFirstRow"
+          class="input"
           placeholder="First Name"
-          autofocus
           required
         />
+        
         <input
           type="text"
           name="sname"
-          class="inputFirstRow"
+          class="input"
           placeholder="Second Name"
         /><br />
 
         <input
           type="tel"
           name="number"
-          class="inputFirstRow"
+          class="input"
           placeholder="Phone number"
           pattern="[0-9]*"
           title="Please enter a valid phone number"
           required
         />
+
         <input
           type="email"
           name="email"
-          class="inputFirstRow"
+          class="input"
           placeholder="Email"
           pattern="[a-z0-9._%+-]{1,20}@[a-z0-9.-]{1,8}\.[a-z]{2,5}"
           required
@@ -60,8 +73,8 @@
           <input
             type="password"
             name="confirmpass"
-            class="inputConfirmPass"
             id="confirmPassword"
+            class="inputConfirmPass"
             placeholder="Confirm password"
             required
           />
@@ -74,11 +87,23 @@
 
     <div id="divSignIn">
       <h1 id="h1In">Already have an account!!</h1>
-
       <a href="login.html" class="btn">SIGN IN</a>
     </div>
 
     <script>
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   let form = document.getElementById("signup-form");
+      //   let usernameInput = document.getElementById("username");
+
+      //   form.addEventListener("submit", function(event) {
+      //     if (usernameInput.value.trim() === "a") {
+      //       event.preventDefault();
+      //       let errorText = document.querySelector(".username-error");
+      //       errorText.style.display = "block";
+      //     }
+      //   });
+      // });
+
       document.addEventListener("DOMContentLoaded", function () {
         let eyeIcon = document.getElementById("eye");
         let password = document.getElementById("password");
@@ -108,6 +133,7 @@
           }
         };
       });
+
     </script>
   </body>
 </html>
