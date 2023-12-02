@@ -275,6 +275,13 @@ nav {
 }
 
 /* Section 3 */
+#pricing-section {
+  margin-top: 7%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
 #pricing-label {
   font-size: 5vh;
@@ -291,33 +298,36 @@ nav {
 }
 
 .pricing {
+  border: 1pt solid grey;
   display: inline-block;
-  vertical-align: top; /* Align pricings from the top */
-  width: 30%; /* Adjust width to fit your design */
-  margin: 0% 1%; /* Adjust margin for spacing between pricings */
-  text-align: left; /* Align text to the left within each pricing section */
-  box-sizing: border-box; /* Include padding and borders in the width */
+  margin: 0% 2%;
+  vertical-align: middle;
+  margin-top: 5%; /* Adjust margin for spacing between pricings */
+  text-align: center; /* Align text to the left within each pricing section */
+
   padding: 20px; /* Add padding to each pricing section */
 }
 
 .pricing-icon img {
   background-color: red;
   border-radius: 50%;
-  margin-bottom: 1%;
-  width: 50px; /* Set width for the icon */
-  height: 50px; /* Set height for the icon */
+  margin-bottom: 15%;
+  width: 70px; /* Set width for the icon */
+  height: 70px; /* Set height for the icon */
 }
 
 .pricing-offer {
   font-size: 2vh;
   text-transform: uppercase;
-  margin-bottom: 1%;
+  margin-bottom: 7%;
 }
 .pricing-offer h5 {
   color: white;
+  font-size: 3vh;
 }
 .pricing-offer h6 {
   color: red;
+  font-size: 2vh;
 }
 .pricing-offer h6 sub {
   color: white;
@@ -325,7 +335,7 @@ nav {
 
 .pricing-list ul {
   list-style: none; /* Remove default list styles */
-  padding-left: 0;
+  margin-top: 20%;
   color: white; /* Remove default padding */
 }
 
@@ -333,6 +343,7 @@ nav {
   font-size: 2vh;
   position: relative; /* Set position for the custom icon */
   padding-left: 30px; /* Adjust space for the icon */
+  padding-bottom: 6%;
 }
 
 .pricing-list ul li:before {
