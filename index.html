@@ -214,7 +214,17 @@
       </div>
     </div>
   </footer>
-  
-      
+  <!--gded-->
+<script>
+  window.addEventListener('scroll', function () {
+    var navigationBar = document.querySelector('.navigation-bar');
+    if (window.scrollY > 0) {
+      navigationBar.classList.add('navigation-bar-scrolled');
+    } else {
+      navigationBar.classList.remove('navigation-bar-scrolled');
+    }
+  });
+</script>
+
   </body>
 </html>

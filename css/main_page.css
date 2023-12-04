@@ -155,6 +155,11 @@ nav {
     font-size: 14px;
   }
 }
+/*gded*/
+.navigation-bar-scrolled {
+  background-color: rgb(55, 4, 4); 
+  transition: background-color 1s ease; 
+}
 
 /* Add this to your CSS file */
 .training-type {
