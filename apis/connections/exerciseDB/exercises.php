@@ -1,9 +1,10 @@
 <?php
+require_once '..\..\models\exercise_model.php';
 
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-    CURLOPT_URL => "https://exercisedb.p.rapidapi.com/exercises?limit=10",
+    CURLOPT_URL => "https://exercisedb.p.rapidapi.com/exercises",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
@@ -24,5 +25,29 @@ curl_close($curl);
 if ($err) {
     echo "cURL Error #:" . $err;
 } else {
-    echo $response;
+    $exerciseData = json_decode($response, true);
+
+    $exerciseList = [];
+
+    foreach ($exerciseData as $exerciseItem) {
+        $exercise = new Exercise(
+            $exerciseItem['bodyPart'],
+            $exerciseItem['equipment'],
+            $exerciseItem['gifUrl'],
+            $exerciseItem['id'],
+            $exerciseItem['name'],
+            $exerciseItem['target'],
+            $exerciseItem['secondaryMuscles'],
+            $exerciseItem['instructions']
+        );
+        array_push($exerciseList, $exercise);
+    }
+    foreach ($exerciseList as $exercise) {
+        echo "Exercise: {$exercise->name}<br>";
+        echo "Body Part: {$exercise->bodyPart}<br>";
+        echo "Equipment: {$exercise->equipment}<br>";
+        echo "Picture: {$exercise->gifUrl}<br>";
+        // Add more properties as needed
+        echo "<br>";
+    }
 }
