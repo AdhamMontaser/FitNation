@@ -36,8 +36,8 @@
         <div class="middle-spot">
           <h1 class="middle-text1">Welcome to Zacson</h1>
           <h1 class="middle-text2">Gym Trainer</h1>
-          <a href="#">
-            <button class="middle-button">shop now</button>
+          <a href="exercise_page.php">
+            <button class="middle-button">browse</button>
           </a>
         </div>
       </div>
