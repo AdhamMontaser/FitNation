@@ -1,10 +1,11 @@
 <?php
-require_once '..\..\models\exercise_model.php';
+
+require_once 'C:\xampp\htdocs\Fit_Nation\apis\models\exercise_model.php';
 
 $curl = curl_init();
-
+echo "Starting page";
 curl_setopt_array($curl, [
-    CURLOPT_URL => "https://exercisedb.p.rapidapi.com/exercises",
+    CURLOPT_URL => "https://exercisedb.p.rapidapi.com/exercises?limit=500",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
@@ -19,7 +20,6 @@ curl_setopt_array($curl, [
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
-
 curl_close($curl);
 
 if ($err) {
@@ -42,6 +42,8 @@ if ($err) {
         );
         array_push($exerciseList, $exercise);
     }
+    session_start();
+    $_SESSION['listOfExercises'] = $exerciseList;
     foreach ($exerciseList as $exercise) {
         echo "Exercise: {$exercise->name}<br>";
         echo "Body Part: {$exercise->bodyPart}<br>";
