@@ -24,5 +24,12 @@ curl_close($curl);
 if ($err) {
     echo "cURL Error #:" . $err;
 } else {
-    echo $response;
+    $equipmentData = json_decode($response, true);
+
+    $equipmentList = [];
+
+    foreach ($equipmentData as $equipmentItem) {
+        array_push($equipmentList, $equipmentItem);
+    }
+    $_SESSION['listOfEquipments'] = $equipmentList;
 }

@@ -3,7 +3,6 @@
 require_once 'C:\xampp\htdocs\Fit_Nation\apis\models\exercise_model.php';
 
 $curl = curl_init();
-echo "Starting page";
 curl_setopt_array($curl, [
     CURLOPT_URL => "https://exercisedb.p.rapidapi.com/exercises?limit=500",
     CURLOPT_RETURNTRANSFER => true,
@@ -44,12 +43,4 @@ if ($err) {
     }
     session_start();
     $_SESSION['listOfExercises'] = $exerciseList;
-    foreach ($exerciseList as $exercise) {
-        echo "Exercise: {$exercise->name}<br>";
-        echo "Body Part: {$exercise->bodyPart}<br>";
-        echo "Equipment: {$exercise->equipment}<br>";
-        echo "Picture: {$exercise->gifUrl}<br>";
-        // Add more properties as needed
-        echo "<br>";
-    }
 }

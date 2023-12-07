@@ -24,5 +24,12 @@ curl_close($curl);
 if ($err) {
     echo "cURL Error #:" . $err;
 } else {
-    echo $response;
+    $bodyPartData = json_decode($response, true);
+
+    $bodyPartList = [];
+
+    foreach ($bodyPartData as $bodyPartItem) {
+        array_push($bodyPartList, $bodyPartItem);
+    }
+    $_SESSION['listOfBodyParts'] = $bodyPartList;
 }
