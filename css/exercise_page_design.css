@@ -80,3 +80,7 @@ nav {
 }
 
 /* Exercise Page */
+
+.exercise-container {
+  display: inline;
+}

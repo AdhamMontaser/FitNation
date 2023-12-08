@@ -2,7 +2,9 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="css/exercise_page_design.css" />
+  <style>
+    <?php include 'css/exercise_page_design.css' ?>
+  </style>
   <?php
   require_once 'apis/connections/exerciseDB/exercises.php';
   require_once 'apis/connections/exerciseDB/body_part_list.php';
@@ -69,10 +71,10 @@
             echo "</div><div class='exercise-row'>";
           }
           echo "<div class='exercise-container'>";
-          echo "<h2>{$exercise->name}</h2>";
+          echo "<div class ='exercise-description'><h2>{$exercise->name}</h2>";
           echo "<p>Body Part: {$exercise->bodyPart}</p>";
-          echo "<p>Equipment: {$exercise->equipment}</p>";
-          echo "<img src='{$exercise->gifUrl}' alt='{$exercise->name}' />";
+          echo "<p>Equipment: {$exercise->equipment}</p></div>";
+          echo "<div class = 'exercise-image'><img src='{$exercise->gifUrl}' alt='{$exercise->name}' /></div>";
           // Add more properties as needed
           echo "</div>";
           $count++;
