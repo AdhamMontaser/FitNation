@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+    background-color: rgb(232, 223, 223);
+}
+
+a {
+    color: white;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+}
+
+ul {
+    list-style: none;
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Allow options to take remaining space */
+}
+
+li {
+    margin-right: 5%; /* Adjust as needed to create space between li elements */
+    margin-bottom: 10px; /* Adjust as needed */
+    text-align: center;
+}
+
+.btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.btn:hover,
+.dropdown:hover .btn {
+    background-color: #0b7dda;
+}
+#frame {
+    margin: 0 auto;
+    display: block; 
+    width: 80%;
+    height: 800px;
+}
+</style>
+    </head>
+    <body>
+        <!DOCTYPE html>
+<html>
+    <head>
+        <!-- Your head content remains unchanged -->
+    </head>
+    <body>
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <button class="btn">ADD</button>
+                        <div class="dropdown">
+                            <button class="btn">
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="addadmin.html">Admin</a>
+                                <a href="#">Gym</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn">VIEW</button>
+                        <div class="dropdown">
+                            <button class="btn">
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href=""> Admin</a>
+                                <a href="#"> Gym</a>
+                                <a href="#"> User</a>
+                            </div>
+                        </div> 
+                    </li>
+                    <li>
+                        <button class="btn">Remove</button>
+                        <div class="dropdown">
+                            <button class="btn">
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href=""> Admin</a>
+                                <a href="#"> Gym</a>
+                                <a href="#"> User</a>
+                            </div>
+                        </div>   
+                    </li>
+                    <li>
+                        <button class="btn">Search</button>
+                        <div class="dropdown">
+                            <button class="btn">
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href=""> Admin</a>
+                                <a href="#"> Gym</a>
+                                <a href="#"> User</a>
+                            </div>
+                        </div>   
+                    </li>
+                </ul>
+                    
+            </nav>
+        </div>
+        <iframe src="login.html" id="frame"></iframe>
+    </body>
+</html>

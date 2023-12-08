@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/adlogin.css" />
+    <script>
+      const text = "Welcome !";
+      const delay = 100;
+
+      function typeWriter(text, i) {
+        const element = document.getElementById("typed-text");
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(function () {
+            typeWriter(text, i);
+          }, delay);
+        } else {
+          element.style.borderRight = "none";
+        }
+      }
+
+      window.onload = function () {
+        typeWriter(text, 0);
+      };
+    </script>
+    <title>Login</title>
+  </head>
+  <body class="bg">
+    <div>
+      <p id="welcome">Welcome !</p>
+      <br />
+
+      <form action="">
+        <input
+          id="username"
+          type="text"
+          name="uname"
+          placeholder="Enter Email Address or Username..."
+        />
+        <br />
+        <br />
+        <input
+          id="password"
+          type="password"
+          name="pass"
+          placeholder="Password"
+        />
+
+        <p>
+          <input id="rememberme" type="checkbox" name="rememberme" checked />
+          <label id="rememberme">Remember me</label>
+        </p>
+
+        <input id="login-button" type="submit" name="login" value="Login" />
+         <hr id="hline" /> 
+        
+        
+        <a id="forgetpass" href="forgetpassword.html">Forget password?</a>
+      </form>
+    </div>
+  </body>
+</html>
