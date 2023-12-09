@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2023 at 07:29 PM
+-- Generation Time: Dec 09, 2023 at 04:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -71,10 +71,17 @@ CREATE TABLE `user` (
   `Username` varchar(30) NOT NULL,
   `Password` varchar(30) NOT NULL,
   `Email` varchar(30) NOT NULL,
-  `Phone_Number` int(11) NOT NULL,
-  `Height` double DEFAULT NULL,
-  `Weight` double DEFAULT NULL
+  `Phone_Number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`ID`, `First_Name`, `Last_Name`, `Username`, `Password`, `Email`, `Phone_Number`) VALUES
+(9, 'adham', 'hesham', 'adham', '2yyTvgxzGcGgA', 'adhamdod2003@gmail.com', 1232242335),
+(10, 'adham', 'hesham', 'adham123', '2yyTvgxzGcGgA', 'adhamdod2003@gmail.com', 1232242335),
+(11, 'adham', 'mohamed', 'adham2', '2y./NiAyp7td.', 'adhamdod2003@gmail.com', 1232242335);
 
 --
 -- Indexes for dumped tables
@@ -118,7 +125,7 @@ ALTER TABLE `gym`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
