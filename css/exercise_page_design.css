@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .navigation-bar {
   display: flex;
   align-items: center;
@@ -81,33 +85,64 @@ nav {
 
 /* Exercise Page */
 
-.exercise-grid {
+/* Exercise Page */
+
+.main-container {
   display: flex;
-  flex-direction: column; /* Align rows vertically */
+  padding: 20px; /* Adjust as needed */
+}
+
+.filters {
+  color: white;
+  margin-right: 20px; /* Space between filters and results */
+  width: 200px; /* Adjust the width of the filters section */
+}
+
+.exercise-results {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Fill remaining space */
+}
+
+/* ... (other existing styles) ... */
+
+.exercise-grid {
+  /* Styles for exercise grid */
+  text-align: right;
 }
 
 .exercise-row {
   display: flex;
-  text-align: center;
-  justify-content: space-between; /* Space between containers */
-  margin-bottom: 5%; /* Add margin between rows */
+  margin-bottom: 20px; /* Adjust spacing between exercise rows */
 }
 
 .exercise-container {
-  border: solid 1px black;
-  width: calc(33.33% - 20px); /* Set width for each exercise container */
-  /* Subtracting margin from the width to prevent overflow */
-  box-sizing: border-box; /* Include padding and border in width */
+  text-align: center;
+  border: solid 1px red;
+  width: calc(33.33% - 20px); /* Adjust the width for each exercise container */
+  margin-right: 20px; /* Space between exercises */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .exercise-image img {
   background-color: grey;
+  width: 100%; /* Adjust the image width */
+  max-height: 200px; /* Adjust the image max-height */
 }
 .exercise-description h2 {
   overflow: hidden;
   height: 50px;
+  text-transform: capitalize;
   /* overflow: auto;
   height: 130px; */
 }
 .exercise-description {
-  color: red;
+  color: rgb(255, 255, 255);
+}
+.filters label,
+.filters select {
+  margin-bottom: 10px;
 }
