@@ -75,12 +75,39 @@ nav {
 }
 /*gded*/
 .navigation-bar-scrolled {
-  background-color: rgb(55, 4, 4);
+  background-color: rgb(0, 0, 0);
   transition: background-color 1s ease;
 }
 
 /* Exercise Page */
 
+.exercise-grid {
+  display: flex;
+  flex-direction: column; /* Align rows vertically */
+}
+
+.exercise-row {
+  display: flex;
+  text-align: center;
+  justify-content: space-between; /* Space between containers */
+  margin-bottom: 5%; /* Add margin between rows */
+}
+
 .exercise-container {
-  display: inline;
+  border: solid 1px black;
+  width: calc(33.33% - 20px); /* Set width for each exercise container */
+  /* Subtracting margin from the width to prevent overflow */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+.exercise-image img {
+  background-color: grey;
+}
+.exercise-description h2 {
+  overflow: hidden;
+  height: 50px;
+  /* overflow: auto;
+  height: 130px; */
+}
+.exercise-description {
+  color: red;
 }

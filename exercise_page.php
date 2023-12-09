@@ -63,24 +63,29 @@
     </div>
 
     <div class="exercise-grid">
-      <div class="exercise-row">
-        <?php
-        $count = 0;
-        foreach ($filteredExercises as $exercise) {
-          if ($count % 3 === 0 && $count !== 0) {
-            echo "</div><div class='exercise-row'>";
-          }
-          echo "<div class='exercise-container'>";
-          echo "<div class ='exercise-description'><h2>{$exercise->name}</h2>";
-          echo "<p>Body Part: {$exercise->bodyPart}</p>";
-          echo "<p>Equipment: {$exercise->equipment}</p></div>";
-          echo "<div class = 'exercise-image'><img src='{$exercise->gifUrl}' alt='{$exercise->name}' /></div>";
-          // Add more properties as needed
-          echo "</div>";
-          $count++;
+      <?php
+      $count = 0;
+      foreach ($filteredExercises as $exercise) {
+        if ($count % 3 === 0) {
+          echo '<div class="exercise-row">';
         }
-        ?>
-      </div>
+        echo '<div class="exercise-container">';
+        echo "<div class='exercise-description'>";
+        echo "<h2>{$exercise->name}</h2>";
+        echo "<div class='exercise-image'><img src='{$exercise->gifUrl}' alt='{$exercise->name}' /></div>";
+        echo "<p>Body Part: {$exercise->bodyPart}</p>";
+        echo "<p>Equipment: {$exercise->equipment}</p>";
+        echo '</div></div>';
+        $count++;
+        if ($count % 3 === 0) {
+          echo '</div>';
+        }
+      }
+      // Check if the last row is not closed
+      if ($count % 3 !== 0) {
+        echo '</div>';
+      }
+      ?>
     </div>
   </section>
 </body>
