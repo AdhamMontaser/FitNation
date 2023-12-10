@@ -9,6 +9,6 @@
 	{
 		echo'Error '.mysqli_error($con);
 	}else
-		echo '<label style="color:white;">'.'1 row added'.'</label>';
+		echo '<label style="color:black;">'.'1 row added'.'</label>';
 	
 ?>
