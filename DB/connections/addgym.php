@@ -1,6 +1,6 @@
 <?php
 
-	include ('config.php');
+	include ('../config.php');
 	
 	$sql = "insert into gym (Gym_Name, Address, Phone_Number) values 
 	('$_POST[gname]', '$_POST[addr]', '$_POST[phone]')";
