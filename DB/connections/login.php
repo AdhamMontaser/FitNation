@@ -37,7 +37,7 @@
 
 
 //this is more optimized preventable sql injection using prepared stmt and mysqli_real_escape_string
-include 'config.php'; 
+include '../config.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uname = $_POST['uname'];
