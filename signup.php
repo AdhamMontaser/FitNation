@@ -8,7 +8,7 @@
   <?php
     $uname = $fname = $lname = $email = $number = $pass = $confirmpass = "";
     $firstRowEr = $secondRowEr = $thirdRowEr = $fourthRowEr = "";
-    $isValid = "-1";
+    $isValid = "1";
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       
@@ -20,9 +20,7 @@
         if(!preg_match("/^[a-zA-Z0-9-_].{1,30}$/",$uname)){
           $firstRowEr = "at most 30 characters or digits and could include - or _"; 
           $isValid = "0";
-        } else{  
-          $isValid = "1";
-        }
+        } 
       }
       
       if (empty($_POST['fname']) || empty($_POST["lname"])){
@@ -34,8 +32,6 @@
         if(!preg_match("/^[A-Za-z]{1,30}$/",$fname) || !preg_match("/^[A-Za-z]{1,30}$/",$lname)){
           $secondRowEr = "First and last name must be at most 30 characters only";
           $isValid = "0";
-        }else{
-        $isValid = "1";
         }
       }
 
@@ -47,8 +43,6 @@
         if(!preg_match("/^[0-9+].{1,15}$/",$number)){
           $thirdRowEr = "Phone number must be in digits";
           $isValid = "0";
-        }else{ 
-          $isValid = "1";
         }
       }
 
@@ -60,8 +54,6 @@
         if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/",$email)){
           $thirdRowEr = "Incorrect email format";
           $isValid = "0";
-        } else{ 
-        $isValid = "1";
         }
       }
       
@@ -77,9 +69,7 @@
         }else if($pass != $confirmpass){
           $fourthRowEr = "Passwords don't match";
           $isValid = "0";
-        } else{
-          $isValid = "1";
-        }
+        } 
       }
     }
     function clean($data) {
