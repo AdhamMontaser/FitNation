@@ -1,36 +1,40 @@
 <?php
 include('../config.php');
-$results = [];
+
+$message = '';
 
 if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
     $search_term = $_POST['search_term'];
     $search_by = $_POST['search_by'];
 
-    $sql = "SELECT * FROM admin WHERE ";
+    $sql = "DELETE FROM gym WHERE ";
     
     if ($search_by === 'ID') {
         $sql .= "ID LIKE '%$search_term%'";
     } elseif ($search_by === 'name') {
-        $sql .= "Username LIKE '%$search_term%'";
+        $sql .= "Gym_Name LIKE '%$search_term%'";
     }
 
     $result = $con->query($sql);
 
-    if ($result !== false && $result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $results[] = $row;
+    if ($result !== false) {
+        if ($con->affected_rows > 0) {
+            $message = 'DONE';
+        } else {
+            $message = 'No gyms found with the given search term.';
         }
+    } else {
+        $message = 'Error executing the query: ' . $con->error;
     }
+
+    $con->close();
 }
-
-$con->close();
 ?>
-
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Search</title>
+    <title>Remove Gym</title>
     <style>
         body {
             background: radial-gradient(circle, gray, black);
@@ -76,7 +80,7 @@ $con->close();
             width: 100%;
             margin-top: 20px;
             color: white;
-            background-color: transparent;
+            background-color: transparent;  
             padding: 1%;
         }
 
@@ -89,8 +93,8 @@ $con->close();
 </head>
 <body>
     <div>
-        <h2>Search for Admin</h2>
-        <form method="post">
+        <h2>Remove Gym</h2>
+        <form method="post" action="">
             <input type="text" name="search_term" required placeholder="Enter search term">
             <select name="search_by" required>
                 <option value="ID">ID</option>
@@ -99,31 +103,7 @@ $con->close();
             <button type="submit" name="search">Search</button>
         </form>
 
-        <?php if (!empty($results)): ?>
-            <h3>Search Results:</h3>
-            <table>
-                <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>First_Name</th>
-                <th>Second_Name</th
-                ><th>Phone_Number</th>
-                <th>Email</th>
-                </tr>
-                <?php foreach ($results as $row): ?>
-                    <tr>
-                        <td><?php echo $row['ID']; ?></td>
-                        <td><?php echo $row['Username']; ?></td>
-                        <td><?php echo $row['First_Name']; ?></td>
-                        <td><?php echo $row['Second_Name']; ?></td>
-                        <td><?php echo $row['Phone_Number']; ?></td>
-                        <td><?php echo $row['Email']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php elseif (isset($_POST['search'])): ?>
-            <p>No admins found with the given search term.</p>
-        <?php endif; ?>
+        <?php echo $message; ?>
     </div>
 </body>
 </html>
