@@ -13,13 +13,13 @@ curl_setopt_array($curl, [
     CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_HTTPHEADER => [
         "X-RapidAPI-Host: exercisedb.p.rapidapi.com",
-        "X-RapidAPI-Key: 8b5b8fc98amsh047fd98391c68f3p1741fajsnb8bdff583af2"
+        "X-RapidAPI-Key: bf613e5f7emsh9285a5f6882b63ap1c3c57jsne9fe66bee477"
     ],
 ]);
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
-curl_close($curl);
+
 
 if ($err) {
     echo "cURL Error #:" . $err;
@@ -41,6 +41,7 @@ if ($err) {
         );
         array_push($exerciseList, $exercise);
     }
+
     session_start();
     $_SESSION['listOfExercises'] = $exerciseList;
 }
