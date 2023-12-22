@@ -5,6 +5,14 @@
   background-size: cover;
   background-attachment: fixed;
 }
+.error {
+  color: #868686;
+  font-size: 53%;
+}
+
+p{
+  margin: 2% 0%;
+}
 .div1 {
   color: white;
   font-family: "Oswald", sans-serif;
@@ -14,8 +22,9 @@
   border-radius: 7px;
   position: absolute;
   right: 45%;
-  bottom: 35%;
+  bottom: 21.5%;
 }
+
 #hyperlinks {
   font-size: 13px;
   margin: 10px 10px;
