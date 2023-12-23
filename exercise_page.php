@@ -46,6 +46,55 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
       }
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const favoriteStars = document.querySelectorAll('.favorite-star');
+
+      favoriteStars.forEach(star => {
+        star.addEventListener('click', function(event) {
+          const exerciseId = event.currentTarget.dataset.exerciseId; // Extracting exerciseId
+
+          if (event.currentTarget.classList.contains('yellow')) {
+            event.currentTarget.classList.remove('yellow');
+            removeFromFavorites(exerciseId); // Calling a function to handle removal
+          } else {
+            event.currentTarget.classList.add('yellow');
+            addToFavorites(exerciseId); // Calling a function to handle addition
+          }
+        });
+      });
+
+      function addToFavorites(exerciseId) {
+        $.ajax({
+          url: "DB/connections/favorite_exercises.php", // Replace with your PHP file's path
+          type: "POST",
+          data: {
+            exerciseId: exerciseId,
+            flag: 1
+          }, // Sending exerciseId and flag
+          success: function(data) {
+            console.log(data);
+          }
+        });
+        console.log(`Exercise ${exerciseId} added to favorites.`);
+      }
+
+      function removeFromFavorites(exerciseId) {
+        $.ajax({
+          url: "DB/connections/favorite_exercises.php", // Replace with your PHP file's path
+          type: "POST",
+          data: {
+            exerciseId: exerciseId,
+            flag: 0
+          }, // Sending exerciseId and flag
+          success: function(data) {
+            console.log(data);
+          }
+        });
+        console.log(`Exercise ${exerciseId} removed from favorites.`);
+      }
+    });
+  </script>
   <style>
     <?php include 'css/exercise_page_design.css' ?>
   </style>
@@ -104,7 +153,11 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
           echo "<div class='exercise-image'><img src='{$exercise->gifUrl}' alt='{$exercise->name}' /></div>";
           echo "<p>Body Part: {$exercise->bodyPart}</p>";
           echo "<p>Equipment: {$exercise->equipment}</p>";
-          echo '</div></div>';
+          echo '</div>';
+          echo "<div class='exercise-actions'>";
+          echo "<span class='favorite-star' exerciseId='{$exercise->id}'>&#9734;</span>"; // Star symbol
+          echo "</div>";
+          echo '</div>';
           $count++;
           if ($count % 3 === 0) {
             echo '</div>';

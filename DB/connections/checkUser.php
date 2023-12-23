@@ -7,28 +7,28 @@
 
 
 
-  
+
 //     if (!empty($uname) && !empty($password)) {
 //         $sql = "SELECT * FROM user WHERE Username='$uname'";
 //         $result = $con->query($sql);
 
 //         if ($result->num_rows > 0) {
 //             $user = $result->fetch_assoc();
-           
+
 //             if (password_verify($password, $user['Password'])) {
-            
+
 //                 echo "Login successful!";
-            
+
 //             } else {
-               
+
 //                 echo "Incorrect password!";
 //             }
 //         } else {
-          
+
 //             echo "Username not found!";
 //         }
 //     } else {
-       
+
 //         echo "Username and password are required!";
 //     }
 // }
@@ -49,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $uname = mysqli_real_escape_string($con, $uname);
 
-       
+
         $sql = "SELECT * FROM user WHERE Username=?";
-        
+
         $stmt = $con->prepare($sql);
         $stmt->bind_param("s", $uname);
         $stmt->execute();
@@ -59,16 +59,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-           
+
             if (password_verify($password, $user['Password']) && $uname == $user["Username"]) {
-                header("location: index.php");
+                session_start();
+                $_SESSION['user'] = $user;
+                header("location: ../../index.php");
             } else {
-                include"login.php";
+                // include "../../login.php";
                 $isFound = "1";
+                header("Location: ../../login.php");
             }
-        }else{
-            include"login.php";
+        } else {
+            // include "../../login.php";
             $isFound = "0";
+            header("Location: ../../login.php");
         }
         $stmt->close();
     }
@@ -77,9 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
     const isFound = <?php echo $isFound ?>;
 
-    if(isFound == "1")
+    if (isFound == "1")
         document.getElementById("checkUser").innerHTML = "Username or Password are incorrect";
-    else if(isFound == "0")
+    else if (isFound == "0")
         document.getElementById("checkUser").innerHTML = "User not found. Try signing up";
 </script>
-
