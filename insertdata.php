@@ -58,9 +58,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result(); 
     $user = $result->fetch_assoc();
 
+    $stmtemail = $con->prepare('SELECT Email FROM user WHERE Email=?');
+    $stmtemail->bind_param('s', $email);
+    $stmtemail->execute();
+    $stmtemail -> store_result();
+
+    $flag="0";
+
     if($user["Username"] == $uname){
+        
         include "signup.php";
-    }else{
+        $flag="1";
+    }
+    else if($stmtemail->num_rows > 0){
+        include "signup.php";
+        $flag="2";
+    }
+    
+    else{
         $sql = "INSERT INTO user (ID, First_Name, Last_Name, Username, Password, Email, Phone_Number) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $con->prepare($sql);
 
@@ -76,5 +91,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 ?>
 <script>
+    const flag = <?php echo $flag ?>;
+    if(flag=="1")
     document.getElementById("insertdata").innerHTML = "User already exist";
+    else if(flag=="2")
+    document.getElementById("insertdata").innerHTML = "E-mail already exist";
+
 </script>
