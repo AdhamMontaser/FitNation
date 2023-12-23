@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <?php } ?>
 
       <hr id="hline" />
-      <a id="forgetpass" href="forgetpassword.html">Forget password?</a>
+      <a id="forgetpass" href="forgetpassword.php">Forget password?</a>
       <a id="createacc" href="signup.php">Create account!</a>
     </form>
   </div>
