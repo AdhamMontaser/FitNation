@@ -91,22 +91,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label id="rememberme">Remember me</label>
       </p>
 
-        <?php if($isValid == "-1") { ?>
-          <button id="login-button" name="login">Validate</button>
-        <?php }else if($isValid == "0"){ ?>
-          <span class="error" id="thirdRowEr"><?php echo "Something went wrong "; ?></span><br>
-          <button id="login-button" name="login">Validate</button>
-        <?php }else if($isValid == "2"){ ?>
-          <span class="error" id="thirdRowEr"><?php echo "All good "; ?></span><br>
-          <span class="error" id="checkUser"><?php echo ""; ?></span><br>
-          <button id="login-button" name="login">Login</button>
-        <?php } ?>
-        
-        <hr id="hline" />
-        <a id="forgetpass" href="forgetpassword.html">Forget password?</a>
-        <a id="createacc" href="signup.php">Create account!</a>
-      </form>
-    </div>
+      <?php if ($isValid == "-1") { ?>
+        <button id="login-button" name="login">Validate</button>
+      <?php } else if ($isValid == "0") { ?>
+        <span class="error" id="thirdRowEr"><?php echo "Something went wrong "; ?></span><br>
+        <button id="login-button" name="login">Validate</button>
+      <?php } else if ($isValid == "2") { ?>
+        <span class="error" id="thirdRowEr"><?php echo "All good "; ?></span><br>
+        <span class="error" id="checkUser"><?php echo ""; ?></span><br>
+        <button id="login-button" name="login">Login</button>
+      <?php } ?>
+
+      <hr id="hline" />
+      <a id="forgetpass" href="forgetpassword.html">Forget password?</a>
+      <a id="createacc" href="signup.php">Create account!</a>
+    </form>
+  </div>
 
   <script>
     const isValid = <?php echo $isValid ?>;
