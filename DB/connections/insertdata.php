@@ -12,29 +12,21 @@
 
 //     $ID = null;
 
-    
 
 
 
 
-
-    
-   
 //     $hashed_password = crypt($pass, PASSWORD_DEFAULT);
 
 //     $sql = "INSERT INTO user (ID,First_Name,Last_Name,Username,Password,Email,Phone_Number) VALUES ('$ID','$fname' ,'$sname','$usname','$hashed_password','$email','$number')";
 
 //     if ($con->query($sql) === TRUE) {
 //         echo "User registered successfully!";  //.....
-        
+
 //     } else {
 //         echo "Error: " . $sql . "<br>" . $con->error;
 //     }
 // }
-
-
-
-
 //this is more optimized preventable sql injection using prepared stmt and mysqli_real_escape_string 
 
 $con = new mysqli('localhost', 'root', '', 'fitnation');
@@ -51,29 +43,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashed_password = crypt($pass, PASSWORD_DEFAULT);
 
-    $stmt = $con ->prepare('select Username from user where Username=?');
-    
+    $stmt = $con->prepare('select Username from user where Username=?');
+
     $stmt->bind_param("s", $uname);
     $stmt->execute();
-    $result = $stmt->get_result(); 
+    $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 
-    if($user["Username"] == $uname){
-        include "signup.php";
-    }else{
+    if ($user["Username"] == $uname) {
+        include "../../signup.php";
+    } else {
         $sql = "INSERT INTO user (ID, First_Name, Last_Name, Username, Password, Email, Phone_Number) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $con->prepare($sql);
 
         $stmt->bind_param("issssss", $ID, $fname, $lname, $uname, $hashed_password, $email, $number);
         if ($stmt->execute()) {
-            header("location: login.php");
-        } else{
+            header("location: ../../login.php");
+        } else {
             echo "Error: " . $sql . "<br>" . $con->error;
         }
     }
 }
 
-    $stmt->close();
+$stmt->close();
 ?>
 <script>
     document.getElementById("insertdata").innerHTML = "User already exist";

@@ -181,3 +181,15 @@ nav {
   background-color: white;
   color: black;
 }
+
+.favorite-star {
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Style for the yellow color when toggled */
+.favorite-star.yellow {
+  color: yellow;
+}
