@@ -2,92 +2,12 @@ body {
   background-color: black;
 }
 
-.navigation-bar {
-  display: flex;
-  align-items: center;
-  height: 100px; /* Set a fixed height for the navigation bar */
-  background-color: transparent;
-  padding: 0% 5%; /* Add padding to the sides */
-  position: sticky;
-}
-
-nav {
-  position: sticky;
-  top: 0;
-}
-
-.navigation-bar-logo {
-  display: flex;
-  align-items: center;
-}
-
-.navigation-bar img {
-  width: 100%;
-  max-height: 50px; /* Adjust as needed */
-}
-
-.navigation-bar-options {
-  list-style: none;
-  margin-left: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1; /* Allow options to take remaining space */
-}
-
-.navigation-bar li {
-  text-transform: capitalize;
-  width: 50px;
-  transition: font-size, font-weight;
-  margin-right: 80px; /* Adjust as needed */
-  color: white;
-  font-size: 24px; /* Adjust as needed */
-}
-
-.navigation-bar li:hover {
-  font-size: 30px; /* Adjust as needed */
-  font-weight: bolder;
-}
-
-.navigation-bar a {
-  text-decoration: none;
-  color: white;
-}
-
-/* Media Query for smaller screens */
-@media screen and (max-width: 600px) {
-  .navigation-bar {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  .navigation-bar-options {
-    flex-grow: 0; /* Do not allow options to take remaining space */
-  }
-
-  .navigation-bar li {
-    margin-right: 0;
-    margin-bottom: 10px; /* Adjust as needed */
-    text-align: center;
-  }
-
-  .navigation-bar li:hover {
-    font-size: 14px;
-  }
-}
-/*gded*/
-.navigation-bar-scrolled {
-  background-color: rgb(0, 0, 0);
-  transition: background-color 1s ease;
-}
-
 /* Exercise Page */
 
 /* Exercise Page */
 
 .main-container {
+  background-color: black;
   display: flex;
   padding: 20px; /* Adjust as needed */
 }
@@ -135,6 +55,8 @@ nav {
 .exercise-description h2 {
   overflow: hidden;
   height: 50px;
+  font-size: 2.5vh;
+  padding-top: 15px;
   text-transform: capitalize;
   /* overflow: auto;
   height: 130px; */
@@ -165,7 +87,9 @@ nav {
   padding: 0;
   margin: 0;
 }
-
+.page-link {
+  background-color: black;
+}
 .pagination li {
   margin: 0 5px;
 }

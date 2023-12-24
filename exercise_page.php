@@ -46,32 +46,36 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
       }
     });
   </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    $(document).ready(function() {
       const favoriteStars = document.querySelectorAll('.favorite-star');
 
       favoriteStars.forEach(star => {
         star.addEventListener('click', function(event) {
-          const exerciseId = event.currentTarget.dataset.exerciseId; // Extracting exerciseId
+          const exerciseId = event.currentTarget.getAttribute('exerciseId');
+          const user = event.currentTarget.getAttribute('data-user');
 
           if (event.currentTarget.classList.contains('yellow')) {
             event.currentTarget.classList.remove('yellow');
-            removeFromFavorites(exerciseId); // Calling a function to handle removal
+            removeFromFavorites(exerciseId, user); // Calling a function to handle removal
           } else {
             event.currentTarget.classList.add('yellow');
-            addToFavorites(exerciseId); // Calling a function to handle addition
+            addToFavorites(exerciseId, user); // Calling a function to handle addition
           }
         });
       });
 
-      function addToFavorites(exerciseId) {
+      function addToFavorites(exerciseId, user) {
+        var username = "<?php echo isset($_SESSION['user']['Username']) ? $_SESSION['user']['Username'] : 'REALLY NIGGA' ?>";
         $.ajax({
-          url: "DB/connections/favorite_exercises.php", // Replace with your PHP file's path
+          url: "DB/connections/favorite_exercises.php",
           type: "POST",
           data: {
             exerciseId: exerciseId,
+            user: username,
             flag: 1
-          }, // Sending exerciseId and flag
+          },
           success: function(data) {
             console.log(data);
           }
@@ -79,14 +83,16 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
         console.log(`Exercise ${exerciseId} added to favorites.`);
       }
 
-      function removeFromFavorites(exerciseId) {
+      function removeFromFavorites(exerciseId, user) {
+        var username = "<?php echo isset($_SESSION['user']['Username']) ? $_SESSION['user']['Username'] : 'REALLY NIGGA' ?>";
         $.ajax({
-          url: "DB/connections/favorite_exercises.php", // Replace with your PHP file's path
+          url: "DB/connections/favorite_exercises.php",
           type: "POST",
           data: {
             exerciseId: exerciseId,
+            user: username,
             flag: 0
-          }, // Sending exerciseId and flag
+          },
           success: function(data) {
             console.log(data);
           }
@@ -95,50 +101,66 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
       }
     });
   </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>
     <?php include 'css/exercise_page_design.css' ?>
   </style>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-  <nav>
-    <!-- Your navigation bar here -->
-  </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- Existing nav links -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Favorites</a>
+          </li>
+        </ul>
 
-  <div class="main-container">
-    <section class="filters">
-      <div class="filters-content">
-        <form action="" method="get">
-          <label for="bodyPart">Select Body Part:</label>
-          <select name="bodyPart" id="bodyPart">
-            <option value="all">All Body Parts</option>
-            <?php
-            foreach ($_SESSION['listOfBodyParts'] as $part) {
-              $selected = isset($_GET['bodyPart']) && $_GET['bodyPart'] === $part ? 'selected' : '';
-              echo "<option value='{$part}' {$selected}>{$part}</option>";
-            }
-            ?>
-          </select>
-          <br>
-          <label for="equipment">Select Equipment:</label>
-          <select name="equipment" id="equipment">
-            <option value="all">All Equipment</option>
-            <?php
-            foreach ($_SESSION['listOfEquipments'] as $equipment) {
-              $selected = isset($_GET['equipment']) && $_GET['equipment'] === $equipment ? 'selected' : '';
-              echo "<option value='{$equipment}' {$selected}>{$equipment}</option>";
-            }
-            ?>
-          </select>
-          <br>
-          <input type="submit" value="Apply Filters">
+        <!-- Dropdown filters and Apply Filters button -->
+        <form class="form-inline my-2 my-lg-0">
+          <div class="input-group mr-sm-2">
+            <select class="form-select" id="bodyPartDropdown" name="bodyPart">
+              <option value="all" selected>Select Body Part</option>
+              <?php
+              foreach ($_SESSION['listOfBodyParts'] as $part) {
+                $selected = isset($_GET['bodyPart']) && $_GET['bodyPart'] === $part ? 'selected' : '';
+                echo "<option value='{$part}' {$selected}>{$part}</option>";
+              }
+              ?>
+            </select>
+          </div>
+
+          <div class="input-group mr-sm-2">
+            <select class="form-select" id="equipmentDropdown" name="equipment">
+              <option value="all" selected>Select Equipment</option>
+              <?php
+              foreach ($_SESSION['listOfEquipments'] as $equipment) {
+                $selected = isset($_GET['equipment']) && $_GET['equipment'] === $equipment ? 'selected' : '';
+                echo "<option value='{$equipment}' {$selected}>{$equipment}</option>";
+              }
+              ?>
+            </select>
+          </div>
+
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Apply Filters</button>
         </form>
       </div>
-    </section>
+    </div>
+  </nav>
 
-    <div class="vertical-line"></div>
 
+  <div class="main-container">
     <section class="exercise-results">
       <div class="exercise-grid">
         <?php
@@ -151,7 +173,7 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
           echo "<div class='exercise-description'>";
           echo "<h2>{$exercise->name}</h2>";
           echo "<div class='exercise-image'><img src='{$exercise->gifUrl}' alt='{$exercise->name}' /></div>";
-          echo "<p>Body Part: {$exercise->bodyPart}</p>";
+          echo '<p">Body Part: {$exercise->bodyPart}</p>';
           echo "<p>Equipment: {$exercise->equipment}</p>";
           echo '</div>';
           echo "<div class='exercise-actions'>";
@@ -175,8 +197,11 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
         <ul class="pagination">
           <?php
           for ($i = 1; $i <= $totalPages; $i++) {
+            // Build the URL for each pagination link, including filter parameters if they exist
+            $filterParams = isset($_GET['bodyPart']) ? "bodyPart={$_GET['bodyPart']}&" : '';
+            $filterParams .= isset($_GET['equipment']) ? "equipment={$_GET['equipment']}&" : '';
             $isActive = isset($_GET['page']) && $_GET['page'] == $i ? 'active' : ''; // Add this line to highlight the current page
-            echo "<li class='page-item {$isActive}'><a class='page-link' href='exercise_page.php?page={$i}'>{$i}</a></li>";
+            echo "<li class='page-item {$isActive}'><a class='page-link' href='exercise_page.php?{$filterParams}page={$i}'>{$i}</a></li>";
           }
           ?>
         </ul>
