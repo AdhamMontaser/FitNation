@@ -7,12 +7,12 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
     $search_term = $_POST['search_term'];
     $search_by = $_POST['search_by'];
 
-    $sql = "DELETE FROM gym WHERE ";
+    $sql = "DELETE FROM user WHERE ";
     
     if ($search_by === 'ID') {
         $sql .= "ID LIKE '%$search_term%'";
     } elseif ($search_by === 'name') {
-        $sql .= "Gym_Name LIKE '%$search_term%'";
+        $sql .= "username LIKE '%$search_term%'";
     }
 
     $result = $con->query($sql);
@@ -21,7 +21,7 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
         if ($con->affected_rows > 0) {
             $message = 'DONE';
         } else {
-            $message = 'No gyms found with the given search term.';
+            $message = 'No user found with the given search term.';
         }
     } else {
         $message = 'Error executing the query: ' . $con->error;
@@ -93,12 +93,12 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
 </head>
 <body>
     <div>
-        <h2>Remove Gym</h2>
+        <h2>Remove user</h2>
         <form method="post" action="">
             <input type="text" name="search_term" required placeholder="Enter search term">
             <select name="search_by" required>
                 <option value="ID">ID</option>
-                <option value="name">Name</option>
+                <option value="username">Name</option>
             </select>
             <button type="submit" name="search">delete</button>
         </form>
