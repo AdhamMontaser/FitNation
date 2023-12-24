@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(232, 223, 223);
+    background-color: black;
 }
 
 a {
@@ -7,10 +7,12 @@ a {
 }
 
 nav {
+    background-color: transparent;
     position: sticky;
     top: 0;
-}
+    transition: background-color 0.3s;
 
+}
 ul {
     list-style: none;
     margin: auto;
@@ -28,12 +30,13 @@ li {
 }
 
 .btn {
-    background-color: #2196F3;
+    background-color: transparent;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     outline: none;
+    border:1px double darkred;
     text-transform: uppercase;
 }
 
@@ -67,12 +70,13 @@ li {
 
 .btn:hover,
 .dropdown:hover .btn {
-    background-color: #0b7dda;
+    background-color: darkred;
 }
 #frame {
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 3%;
     display: block; 
     width: 80%;
     height: 800px;
-    background-color: black;
+    border:2px solid darkred;
 }
