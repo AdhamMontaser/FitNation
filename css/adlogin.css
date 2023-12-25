@@ -1,0 +1,149 @@
+body{
+    background-color: rgb(8, 1, 1);
+}
+.bg{
+    background-image: url("../assets/img/adlog.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+div {
+    background-color: black;
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+    text-align: center;
+    width: 40%;
+    border-radius: 7px;
+    position: absolute;
+    right: 25%;
+    bottom: 15%; 
+    padding: 5%;
+    
+  }
+#username {
+    color: white;
+    font-size: 20px;
+    width: 350px;
+    height: 30px;
+    border: none;
+    background: none;
+    outline: none;
+    margin-bottom: 7px;
+    border-bottom: 2px solid #999;
+    transition: border-bottom-color 0.3s ease;
+    border-radius: 2px;
+  }
+  #username:focus {
+    border-bottom-color: red;
+  }
+  
+  #password {
+    color: white;
+    font-size: 20px;
+    width: 350px;
+    height: 30px;
+    border: none;
+    background: none;
+    outline: none;
+    margin-bottom: 7px;
+    border-bottom: 2px solid #999;
+    transition: border-bottom-color 0.3s ease;
+    border-radius: 2px;
+  }
+  
+  #password:focus {
+    border-bottom-color: red;
+  }
+  #rememberme {
+    font-size: 18px;
+    color: #f2e6e6;
+  }
+  #forgetpass {
+    color: white;
+    /* background-color: rgb(110, 43, 43); */
+    border: 1px solid rgba(104, 85, 224, 1);
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 40;
+    font-size: 14px;
+    margin: 0 10px;
+    width: 200px;
+    padding: 5px 6px;
+    box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+     cursor: pointer;
+     transition: color 0.3s;
+  }
+  #forgetpass:hover{
+    color:rgb(231, 68, 68);
+  }
+ 
+  #login-button {
+    color: white;
+    font-size: 20px;
+    background-image: linear-gradient(
+      135deg,
+      red 0%,
+      rgba(18, 18, 18, 1) 100%
+    );
+    background-size: 200%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 100px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  #login-button:hover {
+    background-position: right center;
+  }
+  #hline {
+    margin: 15px 8px;
+  }
+  #rememberme {
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  #welcome {
+    overflow: hidden;
+    border-right: 0.15em solid rgb(183, 50, 38);
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 45%;
+    letter-spacing: 0.15em;
+    animation: typing 1.5s steps(20, end), blink-caret 0.75s step-end infinite;
+  }
+  /* input[type="checkbox" i]{
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+   
+  } */
+ 
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 45%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      /* border-color: rgb(15, 2, 1); */
+      border-color: transparent;
+    }
+  }
+  

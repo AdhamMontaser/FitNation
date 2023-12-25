@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/adlogin.css" />
     <script>
-      const text = "Welcome Back !";
+      const text = "Welcome !";
       const delay = 100;
 
       function typeWriter(text, i) {
@@ -26,17 +26,18 @@
     <title>Login</title>
   </head>
   <body class="bg">
-    <div class="div1">
-      <p id="welcomeback">Welcome Back !</p>
+    <div>
+      <p id="welcome">Welcome !</p>
       <br />
 
-      <form action="login.php" method = "post">
+      <form action="admin.html" method="post">
         <input
           id="username"
           type="text"
           name="uname"
-          placeholder="Enter Username..."
+          placeholder="Enter Email Address or Username..."
         />
+        <br />
         <br />
         <input
           id="password"
@@ -51,9 +52,10 @@
         </p>
 
         <input id="login-button" type="submit" name="login" value="Login" />
-        <hr id="hline" />
+         <hr id="hline" /> 
+        
+        
         <a id="forgetpass" href="forgetpassword.html">Forget password?</a>
-        <a id="createacc" href="signup.html">Create account!</a>
       </form>
     </div>
   </body>
