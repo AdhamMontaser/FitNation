@@ -27,6 +27,7 @@ session_start();
       <div id="fpass2" style = "color: #868686;text-align: center;margin-right:600px;"></div>
       <input id="reset-button" type="submit" name="reset-button" value="Next" />
       </form>
+
         
     </body>
 </html>

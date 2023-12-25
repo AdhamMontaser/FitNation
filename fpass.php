@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $mail -> isHTML(true);
 
         $mail -> Subject = 'FitNation password recovery';
-        $mail -> Body = 'This is your code to recover your password [ ' .$code .' ] , please note that the code expires after 5 minutes.';
+        $mail -> Body = 'This is your code to recover your password [ ' .$code .' ] , please note that the code expires after 1 minute.';
 
         $mail ->send();
 
@@ -59,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             session_start();
             $_SESSION['email'] =$email;
             $_SESSION['code'] =$code;
+            $_SESSION['time1'] =time(); 
             header("location: forgetpassword2.php");
         } else{
             echo "Error: " . $sql . "<br>" . $con->error;
