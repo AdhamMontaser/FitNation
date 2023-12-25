@@ -33,6 +33,43 @@ body {
   text-align: center;
   font-size: 4vh;
   color: white;
+  text-transform: capitalize;
 
   /* Removed display: flex; */
+}
+.pagination-container {
+  position: fixed;
+  bottom: 0;
+  display: none;
+  left: 0;
+  width: 100%;
+  background-color: black; /* Adjust as needed */
+  padding: 10px 0;
+}
+
+/* Update pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.page-link {
+  background-color: rgb(161, 0, 0);
+}
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border: 1px solid white;
+}
+
+.pagination a:hover {
+  background-color: white;
+  color: black;
 }
