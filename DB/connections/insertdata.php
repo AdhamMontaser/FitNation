@@ -32,6 +32,7 @@
 $con = new mysqli('localhost', 'root', '', 'fitnation');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $flag="";
     $uname = mysqli_real_escape_string($con, $_POST['uname']);
     $fname = mysqli_real_escape_string($con, $_POST['fname']);
     $lname = mysqli_real_escape_string($con, $_POST['lname']);
@@ -47,12 +48,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->bind_param("s", $uname);
     $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
+    $stmt->store_result();
 
-    if ($user["Username"] == $uname) {
-        include "../../signup.php";
-    } else {
+    $stmt2 = $con->prepare('SELECT Email FROM user WHERE Email = ?');
+    $stmt2->bind_param("s", $email);
+    $stmt2->execute();
+    $stmt2->store_result();
+ 
+
+
+    if ($stmt->num_rows > 0 || $stmt2->num_rows > 0) {
+        if($stmt->num_rows > 0){
+            $flag="44";
+            include "../../signup.php";
+            
+        }
+        elseif ($stmt2->num_rows > 0) {
+            $flag="55";
+            include "../../signup.php";
+        }
+        
+        
+    } 
+    else {
         $sql = "INSERT INTO user (ID, First_Name, Last_Name, Username, Password, Email, Phone_Number) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $con->prepare($sql);
 
@@ -68,5 +86,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $stmt->close();
 ?>
 <script>
+    const flag = <?php echo $flag ?>;
+  if(flag=="44")
     document.getElementById("insertdata").innerHTML = "User already exist";
+else if(flag=="55")
+document.getElementById("insertdata").innerHTML = "E-mail already exist";
+
 </script>
