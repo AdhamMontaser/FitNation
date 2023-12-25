@@ -5,7 +5,6 @@ require_once 'apis/connections/exerciseDB/equipment_list.php';
 
 // Filter logic
 $filteredExercises = $_SESSION['listOfExercises']; // Initially, display all exercises
-
 if (isset($_GET['bodyPart']) && $_GET['bodyPart'] !== 'all') {
   $filteredExercises = array_filter($filteredExercises, function ($exercise) {
     return $exercise->bodyPart === $_GET['bodyPart'];
@@ -67,7 +66,7 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
       });
 
       function addToFavorites(exerciseId, user) {
-        var username = "<?php echo isset($_SESSION['user']['Username']) ? $_SESSION['user']['Username'] : 'REALLY NIGGA' ?>";
+        var username = "<?php echo isset($_SESSION['user']['Username']) ? $_SESSION['user']['Username'] : '' ?>";
         $.ajax({
           url: "DB/connections/favorite_exercises.php",
           type: "POST",
@@ -123,7 +122,7 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Favorites</a>
+            <a class="nav-link" href="favorite_exercises_page.php">Favorites</a>
           </li>
         </ul>
 
@@ -173,7 +172,7 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
           echo "<div class='exercise-description'>";
           echo "<h2>{$exercise->name}</h2>";
           echo "<div class='exercise-image'><img src='{$exercise->gifUrl}' alt='{$exercise->name}' /></div>";
-          echo '<p">Body Part: {$exercise->bodyPart}</p>';
+          echo "<p>Body Part: {$exercise->bodyPart}</p>";
           echo "<p>Equipment: {$exercise->equipment}</p>";
           echo '</div>';
           echo "<div class='exercise-actions'>";

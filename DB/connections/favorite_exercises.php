@@ -1,6 +1,4 @@
 <?php
-
-var_dump($_POST); // Check the data received via POST
 $exerciseId = $_POST['exerciseId'];
 $user = $_POST['user'];
 $flag = $_POST['flag'];

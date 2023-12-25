@@ -1,7 +1,10 @@
 <?php
-
-require_once 'C:\xampp\htdocs\Fit_Nation\apis\models\exercise_model.php';
-
+session_start();
+if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+    header('Location: login.php');
+    exit();
+}
+include 'apis/models/exercise_model.php';
 $curl = curl_init();
 curl_setopt_array($curl, [
     CURLOPT_URL => "https://exercisedb.p.rapidapi.com/exercises?limit=500",
@@ -35,13 +38,10 @@ if ($err) {
             $exerciseItem['gifUrl'],
             $exerciseItem['id'],
             $exerciseItem['name'],
-            $exerciseItem['target'],
-            $exerciseItem['secondaryMuscles'],
-            $exerciseItem['instructions']
         );
         array_push($exerciseList, $exercise);
     }
 
-    session_start();
+
     $_SESSION['listOfExercises'] = $exerciseList;
 }
