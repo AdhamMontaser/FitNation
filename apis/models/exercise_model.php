@@ -18,13 +18,9 @@ class Exercise
     public string $bodyPart;
     public string $equipment;
     public string $gifUrl;
-    public string $id;
+    public int $id;
     public string $name;
-    public string $target;
-    /** @var string[] */
-    public array $secondaryMuscles;
-    /** @var string[] */
-    public array $instructions;
+
 
     /**
      * @param string[] $secondaryMuscles
@@ -36,17 +32,11 @@ class Exercise
         string $gifUrl,
         string $id,
         string $name,
-        string $target,
-        array $secondaryMuscles,
-        array $instructions
     ) {
         $this->bodyPart = $bodyPart;
         $this->equipment = $equipment;
         $this->gifUrl = $gifUrl;
         $this->id = $id;
         $this->name = $name;
-        $this->target = $target;
-        $this->secondaryMuscles = $secondaryMuscles;
-        $this->instructions = $instructions;
     }
 }
