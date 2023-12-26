@@ -157,8 +157,8 @@ nav {
 }
 /*gded*/
 .navigation-bar-scrolled {
-  background-color: rgb(55, 4, 4); 
-  transition: background-color 1s ease; 
+  background-color: rgb(55, 4, 4);
+  transition: background-color 1s ease;
 }
 
 /* Add this to your CSS file */
@@ -463,4 +463,23 @@ nav {
   .footer-column {
     width: 100%;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #970505;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #db0909;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bc0b0b;
 }

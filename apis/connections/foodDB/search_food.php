@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+    header('Location: login.php');
+    exit();
+}
 session_start();
 require_once 'apis/models/food_model.php';
 
