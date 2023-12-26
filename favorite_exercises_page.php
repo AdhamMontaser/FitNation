@@ -70,7 +70,7 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="favorite_exercises_page.php">Favorites</a>
+                        <a class="nav-link" href="exercise_page.php">Browse Exercises</a>
                     </li>
                 </ul>
 
@@ -135,13 +135,6 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
                     }
                 });
             });
-
-            // function addToFavorites(exerciseId) {
-            //     let favorites = JSON.parse(sessionStorage.getItem('favoriteExercises')) || [];
-            //     favorites.push(exerciseId);
-            //     sessionStorage.setItem('favoriteExercises', JSON.stringify(favorites));
-            //     console.log(`Exercise ${exerciseId} added to favorites.`);
-            // }
 
             function removeFromFavorites(exerciseId) {
                 var username = "<?php echo isset($_SESSION['user']['Username']) ? $_SESSION['user']['Username'] : '' ?>";

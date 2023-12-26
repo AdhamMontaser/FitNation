@@ -2,6 +2,7 @@
 require_once 'apis/connections/exerciseDB/exercises.php';
 require_once 'apis/connections/exerciseDB/body_part_list.php';
 require_once 'apis/connections/exerciseDB/equipment_list.php';
+require 'DB/connections/fetch_favorite_exercises.php';
 
 // Filter logic
 $filteredExercises = $_SESSION['listOfExercises']; // Initially, display all exercises
@@ -176,7 +177,9 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
           echo "<p>Equipment: {$exercise->equipment}</p>";
           echo '</div>';
           echo "<div class='exercise-actions'>";
-          echo "<span class='favorite-star' exerciseId='{$exercise->id}'>&#9734;</span>"; // Star symbol
+          $isFavorite = in_array($exercise->id, $favoriteExerciseIds); // Check if exercise ID is in favorite exercises
+          $starClass = $isFavorite ? 'favorite-star yellow' : 'favorite-star'; // Set star class based on favorite status
+          echo "<span class='{$starClass}' exerciseId='{$exercise->id}'>&#9734;</span>"; // Star symbol
           echo "</div>";
           echo '</div>';
           $count++;
