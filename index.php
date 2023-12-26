@@ -71,7 +71,7 @@
             comptetition. Guided by a certified coach.
           </p>
           <div>
-            <a href="#">
+            <a href="food_page.php">
               <button class="training-button">shop now</button>
             </a>
           </div>
