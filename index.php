@@ -5,6 +5,24 @@
   <link rel="stylesheet" href="css/main_page.css" />
   <title>FitNation</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    // Get the button element
+    const browseButton = document.getElementById('middle-button');
+
+    // Add a click event listener to the button
+    browseButton.addEventListener('click', function(event) {
+      // Prevent the default behavior of the anchor tag
+      event.preventDefault();
+
+      // Get the element to scroll to
+      const browseSection = document.getElementById('browse-section');
+
+      // Scroll to the element smoothly
+      browseSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -16,9 +34,9 @@
         </div>
         <ul class="navigation-bar-options">
           <li><a href="">home</a></li>
-          <li><a href="">about</a></li>
+          <li><a href="about.html">about</a></li>
           <li><a href="">courses</a></li>
-          <li><a href="">pricing</a></li>
+          <li><a href="#pricing-reach-section">pricing</a></li>
           <li><a href="">gallery</a></li>
           <li><a href="">blog</a></li>
           <li><a href="">contact</a></li>
@@ -40,24 +58,24 @@
       <div class="middle-spot">
         <h1 class="middle-text1">Welcome to Zacson</h1>
         <h1 class="middle-text2">Gym Trainer</h1>
-        <a href="exercise_page.php">
-          <button class="middle-button">browse</button>
+        <a href="#browse-section">
+          <button id="middle-button" class="middle-button">browse</button>
         </a>
       </div>
     </div>
   </main style="background: url('assets/img/background_image.png');">
-  <section class="training-type">
+  <section id="browse-section" class="training-type">
     <div class="training-type-container">
       <div class="personal">
         <div class="text-overlay">
-          <h1>personal training</h1>
+          <h1>Exercises Section</h1>
           <p>
-            Fight your journey out into a better self, with the guidance of a
-            certified personal trainer.
+            Browse different exercises for different body parts using different equipments. Add them to your favorites and access them simultaneously
+
           </p>
           <div>
             <a href="#">
-              <button class="training-button">shop now</button>
+              <button class="training-button">Browse Exercises</button>
             </a>
           </div>
         </div>
@@ -65,14 +83,13 @@
       </div>
       <div class="group">
         <div class="text-overlay">
-          <h1>group training</h1>
+          <h1>Receipes Section</h1>
           <p>
-            Join a group of people in a class full of energy, motivation, and
-            comptetition. Guided by a certified coach.
+            Browse different receipes using a search engine. Get detailed macros about each receipe.
           </p>
           <div>
-            <a href="#">
-              <button class="training-button">shop now</button>
+            <a href="food_page.php">
+              <button class="training-button">Browse Receipes</button>
             </a>
           </div>
         </div>
@@ -114,7 +131,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="pricing-reach-section">
     <div id="pricing-section">
       <div id="pricing-label">
         <h1>pricing</h1>
