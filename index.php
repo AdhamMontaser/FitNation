@@ -34,7 +34,7 @@
         </div>
         <ul class="navigation-bar-options">
           <li><a href="">home</a></li>
-          <li><a href="">about</a></li>
+          <li><a href="about.html">about</a></li>
           <li><a href="">courses</a></li>
           <li><a href="#pricing-reach-section">pricing</a></li>
           <li><a href="">gallery</a></li>
