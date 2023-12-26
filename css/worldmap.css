@@ -1,0 +1,33 @@
+@font-face{
+    font-family: 'source-sans-pro2';
+    src: url(../assets/fonts/source-sans-pro/SourceSansPro-Regular.otf) format('opentype');
+  
+  
+  }
+  
+  body {
+    background-image: url("../assets/img/login_wallpaper.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: aliceblue;
+    font-family: 'source-sans-pro2';
+    font-size: 30px;
+    margin: 0;
+  }
+  
+  #map {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(95% - 600px); /* Adjust the width as needed */
+    height: 700px; /* Adjust the height as needed */
+    border-radius: 15px; /* Adding rounded edges */
+    overflow: hidden; /* Ensuring content stays within the rounded borders */
+  }
+  #title{
+    text-align: center;
+  }
+  
