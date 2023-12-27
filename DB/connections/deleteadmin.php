@@ -7,7 +7,7 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
     $search_term = $_POST['search_term'];
     $search_by = $_POST['search_by'];
 
-    $sql = "DELETE FROM user WHERE ";
+    $sql = "DELETE FROM admin WHERE ";
     
     if ($search_by === 'ID') {
         $sql .= "ID LIKE '%$search_term%'";
@@ -34,7 +34,7 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Remove user</title>
+    <title>Remove admin</title>
     <style>
         body {
             background: radial-gradient(circle, gray, black);
