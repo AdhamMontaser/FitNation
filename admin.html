@@ -21,15 +21,17 @@
       <nav>
         <ul>
           <li>
-            <button class="btn">ADD</button>
+            <button class="btn" onclick="showFrame('addadmin.html')">
+              ADD
+            </button>
             <div class="dropdown">
               <button class="btn">
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
                 <a
-                  href="addadminpage.php"
-                  onclick="showFrame('addadminpage.php')"
+                  href="addadmin.html"
+                  onclick="showFrame('addadmin.html')"
                   target="IFRAME"
                   >Admin</a
                 >
@@ -43,7 +45,9 @@
             </div>
           </li>
           <li>
-            <button class="btn">VIEW</button>
+            <button class="btn" onclick="showFrame('viewadmin.php')">
+              VIEW
+            </button>
             <div class="dropdown">
               <button class="btn">
                 <i class="fa fa-caret-down"></i>
@@ -74,7 +78,9 @@
             </div>
           </li>
           <li>
-            <button class="btn">Remove</button>
+            <button class="btn" onclick="showFrame('deleteadmin.php')">
+              Remove
+            </button>
             <div class="dropdown">
               <button class="btn">
                 <i class="fa fa-caret-down"></i>
@@ -105,7 +111,12 @@
             </div>
           </li>
           <li>
-            <button class="btn">Search</button>
+            <button
+              class="btn"
+              onclick="showFrame('DB/connections/searchadmin.php')"
+            >
+              Search
+            </button>
             <div class="dropdown">
               <button class="btn">
                 <i class="fa fa-caret-down"></i>
