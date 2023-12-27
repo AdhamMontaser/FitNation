@@ -8,11 +8,11 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
     $search_by = $_POST['search_by'];
 
     $sql = "DELETE FROM admin WHERE ";
-    
+
     if ($search_by === 'ID') {
         $sql .= "ID LIKE '%$search_term%'";
-    } elseif ($search_by === 'name') {
-        $sql .= "username LIKE '%$search_term%'";
+    } elseif ($search_by === 'username') {
+        $sql .= "Username LIKE '%$search_term%'";
     }
 
     $result = $con->query($sql);
@@ -33,6 +33,7 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Remove admin</title>
     <style>
@@ -62,7 +63,8 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
             box-sizing: border-box;
         }
 
-        select, button {
+        select,
+        button {
             margin-top: 1.5%;
             background-color: darkred;
             border: none;
@@ -80,21 +82,23 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
             width: 100%;
             margin-top: 20px;
             color: white;
-            background-color: transparent;  
+            background-color: transparent;
             padding: 1%;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
     </style>
 </head>
+
 <body>
     <div>
-        <h2>Remove user</h2>
-        <form method="post" action="">
+        <h2>Remove Admin</h2>
+        <form method="post">
             <input type="text" name="search_term" required placeholder="Enter search term">
             <select name="search_by" required>
                 <option value="ID">ID</option>
@@ -106,4 +110,5 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
         <?php echo $message; ?>
     </div>
 </body>
+
 </html>
