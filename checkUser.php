@@ -7,28 +7,28 @@
 
 
 
-  
+
 //     if (!empty($uname) && !empty($password)) {
 //         $sql = "SELECT * FROM user WHERE Username='$uname'";
 //         $result = $con->query($sql);
 
 //         if ($result->num_rows > 0) {
 //             $user = $result->fetch_assoc();
-           
+
 //             if (password_verify($password, $user['Password'])) {
-            
+
 //                 echo "Login successful!";
-            
+
 //             } else {
-               
+
 //                 echo "Incorrect password!";
 //             }
 //         } else {
-          
+
 //             echo "Username not found!";
 //         }
 //     } else {
-       
+
 //         echo "Username and password are required!";
 //     }
 // }
@@ -49,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $uname = mysqli_real_escape_string($con, $uname);
 
-       
+
         $sql = "SELECT * FROM user WHERE Username=?";
-        
+
         $stmt = $con->prepare($sql);
         $stmt->bind_param("s", $uname);
         $stmt->execute();
@@ -59,18 +59,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-           
+
             if (password_verify($password, $user['Password']) && $uname == $user["Username"]) {
-                header("location: index.php");
+                session_start();
+                $_SESSION['user'] = $user;
+                header("location: ../../index.php");
             } else {
-<<<<<<< Updated upstream:checkUser.php
-                include"login.php";
-                $isFound = "1";
-            }
-        }else{
-            include"login.php";
-            $isFound = "0";
-=======
                 $isFound = "1";
                 session_start();
                 $_SESSION['isFound'] = $isFound;
@@ -82,7 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['isFound'] = $isFound;
             echo $isFound;
             header("location: ../../login.php");
->>>>>>> Stashed changes:DB/connections/checkUser.php
         }
         $stmt->close();
     }else{
@@ -92,17 +85,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("location: ../../login.php");
     }
 }
-<<<<<<< Updated upstream:checkUser.php
 ?>
-<script>
-    const isFound = <?php echo $isFound ?>;
-
-    if(isFound == "1")
-        document.getElementById("checkUser").innerHTML = "Username or Password are incorrect";
-    else if(isFound == "0")
-        document.getElementById("checkUser").innerHTML = "User not found. Try signing up";
-</script>
-
-=======
-?>
->>>>>>> Stashed changes:DB/connections/checkUser.php
