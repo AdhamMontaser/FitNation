@@ -1,3 +1,46 @@
+body{
+    text-align: center;
+    background-image: url("../assets/img/login_bg.png");
+    background-size: cover;
+}
+input{
+    background-color: transparent;
+    padding: 1%;
+    border: black solid;
+    margin-top: 1%;
+    color:black;
+    width: 35%;
+    font-size: 3vh;
+}
+::placeholder {
+    color: black;
+  
+  }
+  
+#sub{
+    background-color: darkred;
+    color:white;
+    padding: 0.6%;
+    border-radius: 2vh;
+    margin-top: 3%;
+}
+#add{
+    color:white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: transparent;
+    font-size: 7vh;
+}
+
+div{
+    padding: 3%;
+    width: 50%;
+    margin: auto;
+    margin-top: 2%;
+}
+/* adem__________________________ 
 html{
     overflow-y: hidden;
     overflow-x: hidden;
@@ -96,7 +139,7 @@ form{
     padding: 8px;
     display: none;
     width: 279px;
-} */
+} 
 
 .inputPass:focus {
     border-bottom-color: red;
@@ -200,3 +243,5 @@ form{
 div{
     width: 100%;
 }
+
+*/
