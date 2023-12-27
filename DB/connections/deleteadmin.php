@@ -1,9 +1,16 @@
 <?php
+if (empty($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) === false) {
+    // If the page is accessed directly or not from your domain, deny access
+    header('HTTP/1.0 403 Forbidden');
+    exit('Access denied.');
+}
+
 include('../config.php');
-
+session_start();
 $message = '';
-
-if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
+if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by']) && ($_POST['search_term'] == $_SESSION['user']['Username'] || $_POST['search_term'] == $_SESSION['user']['ID'])) {
+    $message = "Can't Delete yourself.";
+} else if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
     $search_term = $_POST['search_term'];
     $search_by = $_POST['search_by'];
 

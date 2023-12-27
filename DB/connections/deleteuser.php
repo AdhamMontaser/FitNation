@@ -1,4 +1,9 @@
 <?php
+if (empty($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) === false) {
+    // If the page is accessed directly or not from your domain, deny access
+    header('HTTP/1.0 403 Forbidden');
+    exit('Access denied.');
+}
 include('../config.php');
 
 $message = '';

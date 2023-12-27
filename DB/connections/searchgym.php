@@ -1,4 +1,9 @@
 <?php
+if (empty($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) === false) {
+    // If the page is accessed directly or not from your domain, deny access
+    header('HTTP/1.0 403 Forbidden');
+    exit('Access denied.');
+}
 include('../config.php');
 $results = [];
 
@@ -7,7 +12,7 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
     $search_by = $_POST['search_by'];
 
     $sql = "SELECT * FROM gym WHERE ";
-    
+
     if ($search_by === 'ID') {
         $sql .= "ID LIKE '%$search_term%'";
     } elseif ($search_by === 'name') {
@@ -29,6 +34,7 @@ S
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Gym Search</title>
     <style>
@@ -58,7 +64,8 @@ S
             box-sizing: border-box;
         }
 
-        select, button {
+        select,
+        button {
             margin-top: 1.5%;
             background-color: darkred;
             border: none;
@@ -80,13 +87,15 @@ S
             padding: 1%;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
     </style>
 </head>
+
 <body>
     <div>
         <h2>Search for Gym</h2>
@@ -99,7 +108,7 @@ S
             <button type="submit" name="search">Search</button>
         </form>
 
-        <?php if (!empty($results)): ?>
+        <?php if (!empty($results)) : ?>
             <h3>Search Results:</h3>
             <table>
                 <tr>
@@ -108,7 +117,7 @@ S
                     <th>Address</th>
                     <th>Phone_Number</th>
                 </tr>
-                <?php foreach ($results as $row): ?>
+                <?php foreach ($results as $row) : ?>
                     <tr>
                         <td><?php echo $row['ID']; ?></td>
                         <td><?php echo $row['Gym_Name']; ?></td>
@@ -117,9 +126,10 @@ S
                     </tr>
                 <?php endforeach; ?>
             </table>
-        <?php elseif (isset($_POST['search'])): ?>
+        <?php elseif (isset($_POST['search'])) : ?>
             <p>No gyms found with the given search term.</p>
         <?php endif; ?>
     </div>
 </body>
+
 </html>
