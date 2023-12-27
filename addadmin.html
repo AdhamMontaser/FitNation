@@ -6,102 +6,92 @@
   </head>
 
   <body>
-    <div id="divForm">
-      <form action="DB/connections/addadmin.php" method="post" id="signup-form">
-        <!-- <h1 id="h1Up">logo</h1> -->
-        <div>
-          <img id="h1Up" src="assets/img/logo.png" alt="" />
-        </div>
-        <br />
+    <div id="container">
+      <div id="divForm">
+        <form
+          action="DB/connections/addadmin.php"
+          method="post"
+          id="signup-form"
+        >
+          <div>
+            <img id="h1Up" src="assets/img/logo.png" alt="" />
+          </div>
+          <br />
 
-        <input
-          type="text"
-          name="usname"
-          id="username"
-          class="input"
-          placeholder="Username"
-          autofocus
-          required
-        />
-        <!-- <p class="error username-error" style="display: none;">Please enter a username</p> -->
-        <br />
-
-        <input
-          type="text"
-          name="fname"
-          class="input"
-          placeholder="First Name"
-          required
-        />
-
-        <input
-          type="text"
-          name="sname"
-          class="input"
-          placeholder="Second Name"
-        /><br />
-
-        <input
-          type="tel"
-          name="number"
-          class="input"
-          placeholder="Phone number"
-          pattern="[0-9]*"
-          title="Please enter a valid phone number"
-          required
-        />
-
-        <input
-          type="email"
-          name="email"
-          class="input"
-          placeholder="Email"
-          pattern="[a-z0-9._%+-]{1,20}@[a-z0-9.-]{1,8}\.[a-z]{2,5}"
-          required
-        /><br />
-
-        <div class="passDiv">
           <input
-            type="password"
-            name="pass"
-            id="password"
-            class="inputPass"
-            placeholder="Password"
+            type="text"
+            name="usname"
+            id="username"
+            class="input"
+            placeholder="Username"
+            autofocus
             required
           />
-          <img src="assets/icons/eye-close.png" id="eye" class="img" />
-        </div>
+          <br />
 
-        <div class="ConfrimPassDiv">
           <input
-            type="password"
-            name="confirmpass"
-            id="confirmPassword"
-            class="inputConfirmPass"
-            placeholder="Confirm password"
+            type="text"
+            name="fname"
+            class="input"
+            placeholder="First Name"
             required
           />
-          <img src="assets/icons/eye-close.png" id="confirmEye" class="img" />
-        </div>
+          <input
+            type="text"
+            name="sname"
+            class="input"
+            placeholder="Second Name"
+          />
+          <br />
 
-        <input type="submit" value="Add" id="submit" /><br />
-      </form>
+          <input
+            type="tel"
+            name="number"
+            class="input"
+            placeholder="Phone number"
+            pattern="[0-9]*"
+            title="Please enter a valid phone number"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            class="input"
+            placeholder="Email"
+            pattern="[a-z0-9._%+-]{1,20}@[a-z0-9.-]{1,8}\.[a-z]{2,5}"
+            required
+          />
+          <br />
+
+          <div class="passDiv">
+            <input
+              type="password"
+              name="pass"
+              id="password"
+              class="inputPass"
+              placeholder="Password"
+              required
+            />
+            <img src="assets/icons/eye-close.png" id="eye" class="img" />
+          </div>
+
+          <div class="ConfrimPassDiv">
+            <input
+              type="password"
+              name="confirmpass"
+              id="confirmPassword"
+              class="inputConfirmPass"
+              placeholder="Confirm password"
+              required
+            />
+            <img src="assets/icons/eye-close.png" id="confirmEye" class="img" />
+          </div>
+
+          <input type="submit" value="Add" id="submit" />
+        </form>
+      </div>
     </div>
-
     <script>
-      // document.addEventListener("DOMContentLoaded", function () {
-      //   let form = document.getElementById("signup-form");
-      //   let usernameInput = document.getElementById("username");
-
-      //   form.addEventListener("submit", function(event) {
-      //     if (usernameInput.value.trim() === "a") {
-      //       event.preventDefault();
-      //       let errorText = document.querySelector(".username-error");
-      //       errorText.style.display = "block";
-      //     }
-      //   });
-      // });
-
       document.addEventListener("DOMContentLoaded", function () {
         let eyeIcon = document.getElementById("eye");
         let password = document.getElementById("password");
