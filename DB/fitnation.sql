@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2023 at 08:23 PM
+-- Generation Time: Dec 27, 2023 at 11:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -75,15 +75,19 @@ CREATE TABLE `gym` (
   `Gym_Name` varchar(30) NOT NULL,
   `Address` varchar(30) NOT NULL,
   `Phone_Number` varchar(30) NOT NULL,
-  `ID` int(11) NOT NULL
+  `ID` int(11) NOT NULL,
+  `latitude` decimal(10,8) NOT NULL,
+  `longitude` decimal(11,8) NOT NULL,
+  `picname` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gym`
 --
 
-INSERT INTO `gym` (`Gym_Name`, `Address`, `Phone_Number`, `ID`) VALUES
-('Golds Gym', 'Obour City', '1014117623', 1);
+INSERT INTO `gym` (`Gym_Name`, `Address`, `Phone_Number`, `ID`, `latitude`, `longitude`, `picname`) VALUES
+('Morph Gym', 'nasr city', '0224050035', 9, 30.07063000, 31.43871400, 'morphgym.png'),
+('Golds Gym', 'nasr city', '01270089775', 12, 30.04922400, 31.34756200, 'goldsgym.jpg');
 
 -- --------------------------------------------------------
 
@@ -153,7 +157,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `gym`
 --
 ALTER TABLE `gym`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user`
