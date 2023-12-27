@@ -26,18 +26,19 @@
 
    
     fetch('gymonmap.php')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(branch => {
-                var marker = L.marker([branch.latitude, branch.longitude], { icon: gymIcon }).addTo(map);
-                marker.bindPopup(`
-                    <strong>${branch.name}</strong><br>
-                    <img src="assets/img/img_slider_1.jpg" width="150" height="auto"><br>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=${branch.latitude},${branch.longitude}" target="_blank">Get Directions</a>
-                `); 
-            });
-        })
-        .catch(error => console.error('Error:', error));
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(branch => {
+            var marker = L.marker([branch.latitude, branch.longitude], { icon: gymIcon }).addTo(map);
+            marker.bindPopup(`
+                <strong>${branch.name}</strong><br>
+                <img src="assets/gympics/${branch.picname}" width="150" height="auto"><br>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=${branch.latitude},${branch.longitude}" target="_blank">Get Directions</a>
+            `);
+        });
+    })
+    .catch(error => console.error('Error:', error));
+
 </script>
 
 </body>
