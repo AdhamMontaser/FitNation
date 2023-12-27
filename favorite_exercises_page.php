@@ -4,10 +4,7 @@
 require_once 'apis/connections/exerciseDB/exercises.php';
 require_once 'apis/connections/exerciseDB/body_part_list.php';
 require_once 'apis/connections/exerciseDB/equipment_list.php';
-if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
-    header('Location: login.php');
-    exit();
-}
+
 include 'DB/connections/fetch_favorite_exercises.php';
 $exercises = $_SESSION['listOfExercises'];
 $resultExercises = array();

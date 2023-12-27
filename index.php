@@ -34,7 +34,7 @@
         </div>
         <ul class="navigation-bar-options">
           <li><a href="">home</a></li>
-          <li><a href="about.html">about</a></li>
+          <li><a href="about.php">about</a></li>
           <li><a href="">courses</a></li>
           <li><a href="#pricing-reach-section">pricing</a></li>
           <li><a href="">gallery</a></li>
@@ -74,7 +74,7 @@
 
           </p>
           <div>
-            <a href="#">
+            <a href="exercise_page.php">
               <button class="training-button">Browse Exercises</button>
             </a>
           </div>
@@ -200,36 +200,28 @@
         <div class="footer-column">
           <h4>company</h4>
           <ul>
-            <li><a href="">about us</a></li>
-            <li><a href="">our services</a></li>
-            <li><a href="">privacy policy</a></li>
-            <li><a href="">locations</a></li>
+            <li><a href="about.php">about us</a></li>
+            <li><a href="worldmap.html">locations</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h4>get help</h4>
           <ul>
             <li><a href="" style="text-transform: uppercase;">faq</a></li>
-            <li><a href="">shipping</a></li>
-            <li><a href="">returns</a></li>
-            <li><a href="">order status</a></li>
-            <li><a href="">payment options</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h4>online Shop</h4>
+          <h4>what we offer</h4>
           <ul>
-            <li><a href="">gym equipment</a></li>
-            <li><a href="">supplements</a></li>
+            <li><a href="exercise_page.php">exercises</a></li>
+            <li><a href="food_page.php">receipes</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h4>follow us</h4>
           <div class="social-links">
-            <a href=""><i class="fab fa-facebook-f"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fab fa-linkedin-in"></i></a>
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=61555159465580"><i class="fab fa-facebook-f"></i></a>
+            <a target="_blank" href="https://www.instagram.com/fit_nationn_?igsh=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
