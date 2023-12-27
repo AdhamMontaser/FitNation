@@ -1,4 +1,5 @@
 <?php
+
 $con = new mysqli('localhost', 'root', '', 'fitnation');
 
 
@@ -8,7 +9,7 @@ $result = $con->query($sql);
 $branches = array();
 
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         $branches[] = array(
             "latitude" => floatval($row['latitude']),
             "longitude" => floatval($row['longitude']),
@@ -22,4 +23,3 @@ header('Content-Type: application/json');
 echo json_encode($branches);
 
 $con->close();
-?>
