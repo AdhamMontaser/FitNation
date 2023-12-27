@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<?php
-if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
-  header('Location: login.php');
-  exit();
-}
-?>
 <html>
 
 <head>
@@ -24,10 +18,6 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
     td {
       width: 30%;
       padding: 5%
-    }
-
-    img {
-      border: grey 2px solid;
     }
 
     th {
@@ -55,7 +45,7 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
         <li><a href="index.php">home</a></li>
         <li><a href="about.html">about</a></li>
         <li><a href="blog.php">blog</a></li>
-        <li><a href="">contact</a></li>
+        <li><a href="worldmap.html">location</a></li>
       </ul>
       <?php
       session_start();
@@ -79,24 +69,24 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
       </tr>
       <tr>
         <td>
-          <img src="assets\img\adham.jpg" width="65%">
+          <img src="assets/img/adham.jpg" width="65%">
           <h3>Name: Adham Montaser</h3>
           <h3>Age: 20</h3>
         </td>
         <td>
-          <img src="assets\img\omda.jpg" width="40%">
+          <img src="assets/img/omda.jpg" width="40%">
           <h3>Name: Mohamed Emad</h3>
           <h3>Age: 20</h3>
         </td>
       </tr>
       <tr>
         <td>
-          <img src="assets\img\mostafa.jpg" width="65%">
+          <img src="assets/img/mostafa.jpg" width="65%">
           <h3>Name: Mostafa Nabil</h3>
           <h3>Age: 20</h3>
         </td>
         <td>
-          <img src="">
+          <img src="assets/img/ali.jpg" width="45%">
           <h3>Name: Ali Hesham</h3>
           <h3>Age: 21</h3>
         </td>

@@ -37,9 +37,8 @@
           <li><a href="about.php">about</a></li>
           <li><a href="">courses</a></li>
           <li><a href="#pricing-reach-section">pricing</a></li>
-          <li><a href="">gallery</a></li>
-          <li><a href="">blog</a></li>
-          <li><a href="">contact</a></li>
+          <li><a href="blog.php">blog</a></li>
+          <li><a href="worldmap.html">locations</a></li>
         </ul>
         <?php
         session_start();
@@ -56,7 +55,7 @@
     </nav>
     <div>
       <div class="middle-spot">
-        <h1 class="middle-text1">Welcome to Zacson</h1>
+        <h1 class="middle-text1">Welcome to FitNation</h1>
         <h1 class="middle-text2">Gym Trainer</h1>
         <a href="#browse-section">
           <button id="middle-button" class="middle-button">browse</button>
@@ -93,7 +92,7 @@
             </a>
           </div>
         </div>
-        <img src="assets/img/group_training.png" alt="" />
+        <img src="assets/img/food-section-pic.jpg" alt="" />
       </div>
     </div>
   </section>
@@ -142,16 +141,16 @@
             <img src="assets/icons/price.png" alt="">
           </div>
           <div class="pricing-offer">
-            <h5>6 month</h5>
-            <h6>$30/m <sub>(single class)</sub></h6>
+            <h5>3 month</h5>
+            <h6>2200 EGP <sub>(Ninja)</sub></h6>
           </div>
           <div class="pricing-list">
             <ul>
-              <li>Free Riding</li>
-              <li>Unlimited Equipments</li>
-              <li>Personal Trainer</li>
-              <li>Weight Losing Classes</li>
-              <li>Month to Mouth</li>
+              <li class="yes">Free Riding</li>
+              <li class="yes">Unlimited Equipments</li>
+              <li class="no">Personal Trainer</li>
+              <li class="no">Weight Losing Classes</li>
+              <li class="no">Month to Mouth</li>
             </ul>
           </div>
         </div>
@@ -161,15 +160,15 @@
           </div>
           <div class="pricing-offer">
             <h5>6 month</h5>
-            <h6>$30/m <sub>(single class)</sub></h6>
+            <h6>3000 EGP <sub>(Morph)</sub></h6>
           </div>
           <div class="pricing-list">
             <ul>
-              <li>Free Riding</li>
-              <li>Unlimited Equipments</li>
-              <li>Personal Trainer</li>
-              <li>Weight Losing Classes</li>
-              <li>Month to Mouth</li>
+              <li class="yes">Free Riding</li>
+              <li class="yes">Unlimited Equipments</li>
+              <li class="no">Personal Trainer</li>
+              <li class="yes">Weight Losing Classes</li>
+              <li class="no">Month to Mouth</li>
             </ul>
           </div>
         </div>
@@ -178,16 +177,16 @@
             <img src="assets/icons/price.png" alt="">
           </div>
           <div class="pricing-offer">
-            <h5>6 month</h5>
-            <h6>$30/m <sub>(single class)</sub></h6>
+            <h5>9 month</h5>
+            <h6>5000 EGP <sub>(Tank)</sub></h6>
           </div>
           <div class="pricing-list">
             <ul>
-              <li>Free Riding</li>
-              <li>Unlimited Equipments</li>
-              <li>Personal Trainer</li>
-              <li>Weight Losing Classes</li>
-              <li>Month to Mouth</li>
+              <li class="yes">Free Riding</li>
+              <li class="yes">Unlimited Equipments</li>
+              <li class="yes">Personal Trainer</li>
+              <li class="yes">Weight Losing Classes</li>
+              <li class="yes">Month to Mouth</li>
             </ul>
           </div>
         </div>
@@ -207,7 +206,7 @@
         <div class="footer-column">
           <h4>get help</h4>
           <ul>
-            <li><a href="" style="text-transform: uppercase;">faq</a></li>
+            <li><a target="_blank" href="https://sunnyhealthfitness.com/blogs/health-wellness/top-frequently-asked-fitness-questions-answered" style="text-transform: uppercase;">faq</a></li>
           </ul>
         </div>
         <div class="footer-column">
