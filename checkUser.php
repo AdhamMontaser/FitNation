@@ -43,7 +43,7 @@ $con = new mysqli('localhost', 'root', '', 'fitnation');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uname = $_POST['uname'];
     $password = $_POST['pass'];
-    $isFound = "-1";
+    // $isFound = "-1";
 
     if (!empty($uname) && !empty($password)) {
 
@@ -63,16 +63,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $user['Password']) && $uname == $user["Username"]) {
                 header("location: index.php");
             } else {
+<<<<<<< Updated upstream:checkUser.php
                 include"login.php";
                 $isFound = "1";
             }
         }else{
             include"login.php";
             $isFound = "0";
+=======
+                $isFound = "1";
+                session_start();
+                $_SESSION['isFound'] = $isFound;
+                header("location: ../../login.php");
+            }
+        }else {echo"goa else";
+            $isFound = "100";
+            session_start();
+            $_SESSION['isFound'] = $isFound;
+            echo $isFound;
+            header("location: ../../login.php");
+>>>>>>> Stashed changes:DB/connections/checkUser.php
         }
         $stmt->close();
+    }else{
+        $isFound = "-1";
+        session_start();
+        $_SESSION['isFound'] = $isFound;
+        header("location: ../../login.php");
     }
 }
+<<<<<<< Updated upstream:checkUser.php
 ?>
 <script>
     const isFound = <?php echo $isFound ?>;
@@ -83,3 +103,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         document.getElementById("checkUser").innerHTML = "User not found. Try signing up";
 </script>
 
+=======
+?>
+>>>>>>> Stashed changes:DB/connections/checkUser.php

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< Updated upstream
   <head>
     <link rel="stylesheet" href="css/main_page.css" />
     <title>FitNation</title>
@@ -28,6 +29,41 @@
             <li><a href="">contact</a></li>
           </ul>
           <a href="login.php">
+=======
+
+<head>
+  <link rel="stylesheet" href="css/main_page.css" />
+  <link rel="shortcut icon" type="image/png" href="assets/img/logo.png">
+  <title>FitNation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <main>
+    <nav>
+      <div class="navigation-bar">
+        <div class="navigation-bar-logo">
+          <img src="assets/img/logo.png" alt="logo" />
+        </div>
+        <ul class="navigation-bar-options">
+          <li><a href="">home</a></li>
+          <li><a href="">about</a></li>
+          <li><a href="">courses</a></li>
+          <li><a href="">pricing</a></li>
+          <li><a href="">gallery</a></li>
+          <li><a href="blog.php">blog</a></li>
+          <li><a href="">contact</a></li>
+        </ul>
+        <?php
+        session_start();
+        if (isset($_SESSION['user'])) {
+          echo '<a href="logout.php"><button class="sign-in-button">sign out</button></a>';
+        } else {
+          echo '<a href="login.php"><button class="sign-in-button">sign in</button></a>';
+        }
+        ?>
+        <!-- <a href="login.php">
+>>>>>>> Stashed changes
             <button class="sign-in-button">sign in</button>
           </a>
         </div>

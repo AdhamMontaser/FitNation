@@ -58,8 +58,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result(); 
     $user = $result->fetch_assoc();
 
+<<<<<<< Updated upstream:insertdata.php
     if($user["Username"] == $uname){
         include "signup.php";
+=======
+    $stmt2 = $con->prepare('SELECT Email FROM user WHERE Email = ?');
+    $stmt2->bind_param("s", $email);
+    $stmt2->execute();
+    $stmt2->store_result();
+ 
+
+
+    if ($stmt->num_rows > 0 || $stmt2->num_rows > 0) {
+        if($stmt->num_rows > 0){
+            session_start();
+            $_SESSION["userExist"] = "userExist";
+            header("location: ../../signup.php");
+            
+        }
+        elseif ($stmt2->num_rows > 0) {
+            session_start();
+            $_SESSION["emailExist"] = "emailExist";
+            header("location: ../../signup.php");
+        }
+        
+        
+>>>>>>> Stashed changes:DB/connections/insertdata.php
     }else{
         $sql = "INSERT INTO user (ID, First_Name, Last_Name, Username, Password, Email, Phone_Number) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $con->prepare($sql);
@@ -73,8 +97,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+<<<<<<< Updated upstream:insertdata.php
     $stmt->close();
 ?>
 <script>
     document.getElementById("insertdata").innerHTML = "User already exist";
 </script>
+=======
+$stmt->close();
+?>
+>>>>>>> Stashed changes:DB/connections/insertdata.php
