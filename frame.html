@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-<style>
-    body{
-        background-color: black;
-        background-image: url("assets/img/background_image.png");
-    }
-    
-</style>
-    </head>
-    <body>
 
-    </body>
+<head>
+    <style>
+        body {
+            background-color: black;
+            background-size: cover;
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        label {
+            -webkit-text-stroke: 1px #f6f7f8;
+            -webkit-text-fill-color: transparent;
+            font-size: 10vh;
+            position: relative;
+            animation: slideIn 2s ease forwards;
+            text-transform: uppercase;
+            transition: color 0.3s; /* Use 'transition' instead of 'transform' */
+        }
+
+        @keyframes slideIn {
+            from {
+                left: -100%; /* Start from outside the left edge of the container */
+            }
+
+            to {
+                left: 0; /* Move to the original position */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <label>welcome </label>
+    <br>
+    <label>admin</label>
+</body>
+
 </html>

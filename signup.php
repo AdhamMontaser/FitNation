@@ -1,3 +1,4 @@
+<!-- 3 -->
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +10,7 @@
 <?php
 $uname = $fname = $lname = $email = $number = $pass = $confirmpass = "";
 $firstRowEr = $secondRowEr = $thirdRowEr = $fourthRowEr = "";
-$isValid = "-1";
+$isValid = "0";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -132,17 +133,22 @@ function clean($data)
 
       <div class="error" id="thirdRowEr"><?php echo $fourthRowEr; ?></div>
 
-      <?php if ($isValid == "-1") { ?>
-        <button id="submit">Validate</button><br>
-      <?php } else if ($isValid == "0") { ?>
-        <div class="error" id="thirdRowEr"><?php echo "Something went wrong"; ?></div>
-        <button id="submit">Validate</button><br>
-      <?php } else if ($isValid == "1") { ?>
+      <?php if ($isValid == "1") { ?>
         <div class="error" id="thirdRowEr"><?php echo "All good"; ?></div>
-        <div class="error" id="insertdata"><?php echo ""; ?></div>
-        <button id="submit">let's go</button><br>
       <?php } ?>
 
+      <?php
+      session_start();
+      if (!empty($_SESSION["userExist"])) { ?>
+        <div class="error" id="insertdata">Username already exist</div>
+      <?php } else if (!empty($_SESSION["emailExist"])) { ?>
+        <div class="error" id="insertdata">Email already exist</div>
+      <?php }
+      session_destroy();
+      ?>
+
+
+      <button id="submit">let's go</button><br>
     </form>
   </div>
 

@@ -1,75 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="css/admin.css" />
-    </head>
-    <body>
-        <!DOCTYPE html>
-<html>
-    <head>
-        <!-- Your head content remains unchanged -->
-    </head>
-    <body>
-        <div>
-          
-            <nav>
-                <ul>
-                    <li>
-<!--add gym el adham 3ayzha  addgym.php fel DB/connections-->
-                        <button class="btn">ADD</button>
-                        <div class="dropdown">
-                            <button class="btn">
-                                <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="addadmin.html" target="IFRAME">Admin</a>
-                                <a href="addgym.html" target="IFRAME">Gym</a>
-                            </div>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/admin.css" />
+    <style>
+       
+    </style>
+    <script>
+        function showFrame(url) {
+            var iframe = document.getElementById("frame");
+            iframe.src = url;
+            iframe.style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <ul>
+                <li>
+                    <button class="btn" onclick="showFrame('addadmin.html')">ADD</button>
+                    <div class="dropdown">
+                        <button class="btn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="addadmin.html" onclick="showFrame('addadmin.html')" target="IFRAME">Admin</a>
+                            <a href="addgym.html" onclick="showFrame('addgym.html')" target="IFRAME">Gym</a>
                         </div>
-                    </li>
-                    <li>
-                        <button class="btn">VIEW</button>
-                        <div class="dropdown">
-                            <button class="btn">
-                                <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="viewadmin.php" target="IFRAME"> Admin</a>
-                                <a href="viewgym.php" target="IFRAME"> Gym</a>
-                                <a href="viewuser.php" target="IFRAME"> User</a>
-                            </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <button class="btn">Remove</button>
-                        <div class="dropdown">
-                            <button class="btn">
-                                <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="" target="IFRAME"> Admin</a>
-                                <a href="deletegym.php" target="IFRAME"> Gym</a>
-                                <a href="deleteuser.php" target="IFRAME"> User</a>
-                            </div>
-                        </div>   
-                    </li>
-                    <li>
-                        <button class="btn">Search</button>
-                        <div class="dropdown">
-                            <button class="btn">
-                                <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="DB/connections/searchadmin.php" target="IFRAME"> Admin</a>
-                                <a href="searchgym.php" target="IFRAME"> Gym</a>
-                                <a href="searchuser.php" target="IFRAME"> User</a>
-                            </div>
-                        </div>   
-                    </li>
-                </ul>
-            </nav>
-        <iframe src="frame.html" id="frame" name="IFRAME"></iframe>
+                    </div>
+                </li>
+                <li>
+                    <button class="btn" onclick="showFrame('viewadmin.php')">VIEW</button>
+                    <div class="dropdown">
+                        <button class="btn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="DB/connections/viewadmin.php" onclick="showFrame('viewadmin.php')" target="IFRAME"> Admin</a>
+                            <a href="DB/connections/viewgym.php" onclick="showFrame('viewgym.php')" target="IFRAME"> Gym</a>
+                            <a href="DB/connections/viewuser.php" onclick="showFrame('viewuser.php')" target="IFRAME"> User</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <button class="btn" onclick="showFrame('deleteadmin.php')">Remove</button>
+                    <div class="dropdown">
+                        <button class="btn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="DB/connections/deleteadmin.php" onclick="showFrame('deleteadmin.php')" target="IFRAME"> Admin</a>
+                            <a href="DB/connections/deletegym.php" onclick="showFrame('deletegym.php')" target="IFRAME"> Gym</a>
+                            <a href="DB/connections/deleteuser.php" onclick="showFrame('deleteuser.php')" target="IFRAME"> User</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <button class="btn" onclick="showFrame('DB/connections/searchadmin.php')">Search</button>
+                    <div class="dropdown">
+                        <button class="btn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="DB/connections/searchadmin.php" onclick="showFrame('DB/connections/searchadmin.php')" target="IFRAME"> Admin</a>
+                            <a href="DB/connections/searchgym.php" onclick="showFrame('searchgym.php')" target="IFRAME"> Gym</a>
+                            <a href="DB/connections/searchuser.php" onclick="showFrame('searchuser.php')" target="IFRAME"> User</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <iframe src="" id="frame" name="IFRAME"></iframe>
     </div>
-    </body>
+</body>
+
 </html>
