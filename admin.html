@@ -18,7 +18,7 @@
 
 <body>
     <div>
-        <nav>
+        <nav id="navbar">
             <ul>
                 <li>
                     <button class="btn" onclick="showFrame('addadmin.html')">ADD</button>
@@ -76,5 +76,15 @@
         <iframe src="" id="frame" name="IFRAME"></iframe>
     </div>
 </body>
+<script>
+    window.addEventListener("scroll", function () {
+        var navbar = document.getElementById("navbar");
 
+        if (window.scrollY > 0) {
+            navbar.style.backgroundColor = "black"; // Change background color on scroll
+        } else {
+            navbar.style.backgroundColor = "transparent"; // Reset to transparent if scrolled to the top
+        }
+    });
+</script>
 </html>
