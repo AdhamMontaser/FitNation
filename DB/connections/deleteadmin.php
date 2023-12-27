@@ -10,9 +10,9 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
     $sql = "DELETE FROM admin WHERE ";
 
     if ($search_by === 'ID') {
-        $sql .= "ID LIKE '%$search_term%'";
+        $sql .= "ID = '$search_term'";
     } elseif ($search_by === 'username') {
-        $sql .= "Username LIKE '%$search_term%'";
+        $sql .= "Username = '$search_term'";
     }
 
     $result = $con->query($sql);

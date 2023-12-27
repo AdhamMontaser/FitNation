@@ -18,20 +18,18 @@
 
   <body>
     <div>
-      <nav>
+      <nav id="navbar">
         <ul>
           <li>
-            <button class="btn" onclick="showFrame('addadmin.html')">
-              ADD
-            </button>
+            <button class="btn">ADD</button>
             <div class="dropdown">
               <button class="btn">
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
                 <a
-                  href="addadmin.html"
-                  onclick="showFrame('addadmin.html')"
+                  href="addadminpage.php"
+                  onclick="showFrame('addadminpage.php')"
                   target="IFRAME"
                   >Admin</a
                 >
@@ -45,9 +43,7 @@
             </div>
           </li>
           <li>
-            <button class="btn" onclick="showFrame('viewadmin.php')">
-              VIEW
-            </button>
+            <button class="btn">VIEW</button>
             <div class="dropdown">
               <button class="btn">
                 <i class="fa fa-caret-down"></i>
@@ -78,9 +74,7 @@
             </div>
           </li>
           <li>
-            <button class="btn" onclick="showFrame('deleteadmin.php')">
-              Remove
-            </button>
+            <button class="btn">Remove</button>
             <div class="dropdown">
               <button class="btn">
                 <i class="fa fa-caret-down"></i>
@@ -111,12 +105,7 @@
             </div>
           </li>
           <li>
-            <button
-              class="btn"
-              onclick="showFrame('DB/connections/searchadmin.php')"
-            >
-              Search
-            </button>
+            <button class="btn">Search</button>
             <div class="dropdown">
               <button class="btn">
                 <i class="fa fa-caret-down"></i>
@@ -151,4 +140,26 @@
       <iframe src="" id="frame" name="IFRAME"></iframe>
     </div>
   </body>
+  <script>
+    window.addEventListener("scroll", function () {
+      var navbar = document.getElementById("navbar");
+
+      if (window.scrollY > 0) {
+        navbar.style.backgroundColor = "black"; // Change background color on scroll
+      } else {
+        navbar.style.backgroundColor = "transparent"; // Reset to transparent if scrolled to the top
+      }
+    });
+  </script>
+  <script>
+    window.addEventListener("scroll", function () {
+      var navbar = document.getElementById("navbar");
+
+      if (window.scrollY > 0) {
+        navbar.style.backgroundColor = "black"; // Change background color on scroll
+      } else {
+        navbar.style.backgroundColor = "transparent"; // Reset to transparent if scrolled to the top
+      }
+    });
+  </script>
 </html>
