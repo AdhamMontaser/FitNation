@@ -2,8 +2,8 @@
 
 	include ('../config.php');
 	
-	$sql = "insert into gym (Gym_Name, Address, Phone_Number) values 
-	('$_POST[gname]', '$_POST[addr]', '$_POST[phone]')";
+	$sql = "insert into gym (Gym_Name, Address, Phone_Number,latitude,longitude,picname) values 
+	('$_POST[gname]', '$_POST[addr]', '$_POST[phone]' , '$_POST[latitude]' , '$_POST[longitude]' , '$_POST[picname]')";
 	
 	if (! mysqli_query ($con, $sql))
 	{
