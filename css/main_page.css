@@ -172,12 +172,6 @@ nav {
   padding: 30px;
 }
 
-.personal,
-.group {
-  position: relative;
-  text-align: center;
-}
-
 .text-overlay {
   position: absolute;
   top: 55%; /* Adjust this value as needed */
@@ -204,11 +198,18 @@ nav {
   width: 200px;
   text-align: center;
 }
+.personal,
+.group {
+  position: relative;
+  text-align: center;
+  width: 50%; /* Set both personal and group divs to occupy 50% width */
+}
+
 .personal img,
 .group img {
-  width: 95%;
-  height: auto; /* Use 'auto' to maintain aspect ratio */
-  z-index: 0;
+  width: 100%;
+  height: 100%; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the entire space */
 }
 
 /* Media query for smaller screens */
@@ -351,7 +352,7 @@ nav {
   padding-bottom: 6%;
 }
 
-.pricing-list ul li:before {
+.pricing-list ul .yes:before {
   content: ""; /* Add content for the custom icon */
   background-image: url("../assets/icons/check.png"); /* Replace 'path/to/your-icon.png' with your icon image path */
   background-size: contain; /* Adjust icon size */
