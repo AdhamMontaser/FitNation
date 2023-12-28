@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $user['Password']) && $uname == $user["Username"]) {
                 session_start();
                 $_SESSION['user'] = $user;
+                $_SESSION['uname'] = $uname;
                 header("location: ../../index.php");
             } else {
                 $isFound = "1";
