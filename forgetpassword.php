@@ -3,23 +3,22 @@
 
 <head>
   <link rel="stylesheet" href="css/forgetpassword.css" />
-  <title>Forget Pass</title>
+  <title>Forget Password</title>
 </head>
 
 <body class="bg">
-  <img src="assets/icons/resetpass.png" alt="" />
-  <p id="forgetpass">Forget Password</p>
-  <p id="providestat">
-    Provide your account's email for which you want to reset your password
-  </p>
-  <form action="fpass.php" method="POST">
-    <div class="email-input">
-      <input id="email" type="email" name="email" placeholder="Email" required />
-    </div>
-    <br>
-    <div id="fpass" style="color: #868686;text-align: center;margin-right:600px;"></div>
-    <input id="login-button" type="submit" name="login" value="Next" />
-  </form>
+  <div class="container">
+    <img src="assets/icons/resetpass.png" alt="Reset Password Icon" />
+    <h1>Forget Password</h1>
+    <p>Provide your account's email to reset your password</p>
+    <form action="fpass.php" method="POST">
+      <div class="email-input">
+        <input id="email" type="email" name="email" placeholder="Email" required />
+      </div>
+      <div id="fpass"></div>
+      <input id="login-button" type="submit" name="login" value="Next" />
+    </form>
+  </div>
 </body>
 
 </html>
