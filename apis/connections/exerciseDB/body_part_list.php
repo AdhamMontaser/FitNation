@@ -12,7 +12,7 @@ curl_setopt_array($curl, [
     CURLOPT_CUSTOMREQUEST => "GET",
     CURLOPT_HTTPHEADER => [
         "X-RapidAPI-Host: exercisedb.p.rapidapi.com",
-        "X-RapidAPI-Key: 9d88699cb9mshe0f0f4ef0784eadp17d42fjsn24d248a821aa"
+        "X-RapidAPI-Key: f21cc5fcb1msh20acb55f4705de6p177a89jsn8c88713d59e3"
     ],
 ]);
 

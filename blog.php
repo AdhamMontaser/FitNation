@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
-    header('Location: login.php');
-    exit();
-}
-?>
 <html>
 
 <head>
@@ -17,16 +10,15 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
     <nav>
         <div class="navigation-bar">
             <div class="navigation-bar-logo">
-                <img src="assets/img/logo.png" alt="logo" />
+                <a href="index.php">
+                    <img src="assets/img/logo.png" alt="logo" />
+                </a>
             </div>
             <ul class="navigation-bar-options">
-                <li><a href="">home</a></li>
-                <li><a href="">about</a></li>
-                <li><a href="">courses</a></li>
-                <li><a href="">pricing</a></li>
-                <li><a href="">gallery</a></li>
+                <li><a href="index.php">home</a></li>
+                <li><a href="about.php">about</a></li>
                 <li><a href="blog.php">blog</a></li>
-                <li><a href="">contact</a></li>
+                <li><a href="worldmap.html">locations</a></li>
             </ul>
             <?php
             session_start();

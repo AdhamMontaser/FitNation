@@ -12,7 +12,7 @@ function getFood($foodName)
     $curl = curl_init();
 
     curl_setopt_array($curl, [
-        CURLOPT_URL => "https://dietagram.p.rapidapi.com/apiFood.php?name=$foodName&lang=pl",
+        CURLOPT_URL => "https://dietagram.p.rapidapi.com/apiFood.php?name=$foodName&lang=en",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -21,7 +21,7 @@ function getFood($foodName)
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => [
             "X-RapidAPI-Host: dietagram.p.rapidapi.com",
-            "X-RapidAPI-Key: 4f0685095cmsh09760b696f2c2a0p1dac66jsn533ab08c1848"
+            "X-RapidAPI-Key: f21cc5fcb1msh20acb55f4705de6p177a89jsn8c88713d59e3"
         ],
     ]);
 

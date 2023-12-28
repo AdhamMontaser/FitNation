@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['foodName'])) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" width="50%" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -69,9 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['foodName'])) {
                     <!-- Existing nav links -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="favorite_exercises_page.php">Favorites</a>
                     </li>
                 </ul>
 
