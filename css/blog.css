@@ -110,81 +110,91 @@ body {
   background-position: -100% 0;
 }
 
-#tableFeed {
-  justify-items: center;
-  text-align: center;
-  width: 64.5%;
-  height: 22%;
-  border-radius: 6px;
-  border: solid 2px rgb(51, 51, 51);
-  background-color: rgb(51 51 51);
-  font-size: 10pt;
-  color: white;
-  position: absolute;
-  top: 13%;
-  left: 1%;
-}
-
-/* #tableRow {
-}
-
-#tdImg {
-  /* width: 9%; */
-/* } */
-
-/* .tdTable {
-  /* width: 13%; */
-/*} */
-
-/* #tdTime { */
-/* width: 10%; */
-/*} */
-#test {
-  width: 9%;
-}
-#userImg {
-  /* position: absolute; */
-  width: 72%;
-  /* height: 95%; */
-  /* top: 5%; */
+#feed{
+  position: relative;
+  top: 1%;
   /* left: 1%; */
+}
+
+#post{
+  background-color: rgb(51,51,51);
+  border-radius: 10px;
+  color: white;
+  width: 65%;
+  /* height: 41%; */
+  position: relative;
+  top: 2%;
+  left: -3.5%;
+  display: inline-block;
+}
+
+#info{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#userImg {
+  width: 15%;
+  padding: 2%;
   border-radius: 39%;
 }
 
 #Name {
-  /* position: absolute;
-    top: 32%;
-    left: 19%; */
+  padding: 3%;
   font-size: 24pt;
 }
 
 #userName {
-  /* position: absolute;
-    top: 35%;
-    left: 40%; */
-  font-size: 15pt;
+  padding: 2%;
+  font-size: 17pt;
 }
 
 #time {
-  /* position: absolute;
-    top: 32%;
-    left: 50%; */
-  font-size: 10pt;
+  padding: 1%;
+  font-size: 11pt;
   color: gray;
 }
 
-/* #postText {
+#postContent{
+  /* position: absolute; */
+}
+
+#postText {
+  padding-left: 2%;
+  font-size: 17pt;
+}
+
+#divPostImg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #postImg {
-} */
+  /* width: 10%;
+  height: 10%; */
+}
+
+#postIcons{
+  border-top: solid 1px gray ;
+  margin-top: 1%;
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #like {
-  width: 10%;
-  height: 10%;
+  width: 14%;
+}
+
+#save{
+  width: 14%;
 }
 
 #upImg {
+  z-index: 1;
   position: sticky;
   cursor: pointer;
   height: 7%;

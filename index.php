@@ -38,7 +38,7 @@
           <li><a href="">courses</a></li>
           <li><a href="#pricing-reach-section">pricing</a></li>
           <li><a href="">gallery</a></li>
-          <li><a href="">blog</a></li>
+          <li><a href="blog.php">blog</a></li>
           <li><a href="">contact</a></li>
         </ul>
         <?php
