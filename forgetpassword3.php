@@ -21,12 +21,12 @@
       </div>
       <div id="fpass3" style="color: #868686; text-align: center;"></div>
       <input id="update-button" type="submit" name="update-button" value="Update" />
+      <?php
+      if (isset($_GET['flag'])) {
+        echo "<h1>Passwords don't match</h1>";
+      }
+      ?>
     </form>
-    <script>
-      const flag = <?php echo $flag ?>;
-      if (flag == "33")
-        document.getElementById("fpass3").innerHTML = "Passwords don't match";
-    </script>
   </div>
 </body>
 

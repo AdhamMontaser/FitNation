@@ -1,4 +1,13 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+$flag = ""; // Initialize flag variable
+
+if (isset($_GET['flag'])) {
+  $flag = $_GET['flag']; // Get flag value from URL query parameter
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,10 +27,23 @@
       <div class="code-input">
         <input id="code" type="text" name="code" placeholder="Enter the code" required />
       </div>
-      <div id="fpass2" style="color: #868686; text-align: center;"></div>
+      <div id="fpass2" style="color: #868686; text-align: center;"><?php echo $flag; ?></div>
       <input id="reset-button" type="submit" name="reset-button" value="Next" />
     </form>
   </div>
+
+  <script>
+    // Pass PHP flag variable to JavaScript
+    const flag = "<?php echo $flag; ?>";
+
+    // Use the flag variable in JavaScript as needed
+    if (flag === "6") {
+      document.getElementById("fpass2").innerHTML = "Code is not correct";
+    }
+    if (flag === "66") {
+      document.getElementById("fpass2").innerHTML = "Code expired. <a href='sendcodeagain.php'>Send again</a>";
+    }
+  </script>
 </body>
 
 </html>
