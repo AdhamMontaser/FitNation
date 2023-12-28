@@ -1,4 +1,9 @@
 <?php
+if (empty($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) === false) {
+    // If the page is accessed directly or not from your domain, deny access
+    header('HTTP/1.0 403 Forbidden');
+    exit('Access denied.');
+}
 include('../config.php');
 
 $message = '';
@@ -8,11 +13,11 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
     $search_by = $_POST['search_by'];
 
     $sql = "DELETE FROM gym WHERE ";
-    
+
     if ($search_by === 'ID') {
-        $sql .= "ID LIKE '%$search_term%'";
+        $sql .= "ID = '$search_term'";
     } elseif ($search_by === 'name') {
-        $sql .= "Gym_Name LIKE '%$search_term%'";
+        $sql .= "Gym_Name = '$search_term'";
     }
 
     $result = $con->query($sql);
@@ -33,6 +38,7 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Remove Gym</title>
     <style>
@@ -62,7 +68,8 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
             box-sizing: border-box;
         }
 
-        select, button {
+        select,
+        button {
             margin-top: 1.5%;
             background-color: darkred;
             border: none;
@@ -80,17 +87,19 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
             width: 100%;
             margin-top: 20px;
             color: white;
-            background-color: transparent;  
+            background-color: transparent;
             padding: 1%;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
     </style>
 </head>
+
 <body>
     <div>
         <h2>Remove Gym</h2>
@@ -106,4 +115,5 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
         <?php echo $message; ?>
     </div>
 </body>
+
 </html>

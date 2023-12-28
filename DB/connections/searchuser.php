@@ -1,4 +1,9 @@
 <?php
+if (empty($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) === false) {
+    // If the page is accessed directly or not from your domain, deny access
+    header('HTTP/1.0 403 Forbidden');
+    exit('Access denied.');
+}
 include('../config.php');
 $results = [];
 
@@ -7,7 +12,7 @@ if (isset($_POST['search'], $_POST['search_term'], $_POST['search_by'])) {
     $search_by = $_POST['search_by'];
 
     $sql = "SELECT * FROM user WHERE ";
-    
+
     if ($search_by === 'ID') {
         $sql .= "ID LIKE '%$search_term%'";
     } elseif ($search_by === 'name') {
@@ -29,6 +34,7 @@ $con->close();
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>User Search</title>
     <style>
@@ -58,7 +64,8 @@ $con->close();
             box-sizing: border-box;
         }
 
-        select, button {
+        select,
+        button {
             margin-top: 1.5%;
             background-color: darkred;
             border: none;
@@ -80,13 +87,15 @@ $con->close();
             padding: 1%;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
     </style>
 </head>
+
 <body>
     <div>
         <h2>Search for User</h2>
@@ -99,18 +108,18 @@ $con->close();
             <button type="submit" name="search">Search</button>
         </form>
 
-        <?php if (!empty($results)): ?>
+        <?php if (!empty($results)) : ?>
             <h3>Search Results:</h3>
             <table>
                 <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>First_Name</th>
-                <th>Second_Name</th
-                ><th>Phone_Number</th>
-                <th>Email</th>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>First_Name</th>
+                    <th>Second_Name</th>
+                    <th>Phone_Number</th>
+                    <th>Email</th>
                 </tr>
-                <?php foreach ($results as $row): ?>
+                <?php foreach ($results as $row) : ?>
                     <tr>
                         <td><?php echo $row['ID']; ?></td>
                         <td><?php echo $row['Username']; ?></td>
@@ -121,9 +130,10 @@ $con->close();
                     </tr>
                 <?php endforeach; ?>
             </table>
-        <?php elseif (isset($_POST['search'])): ?>
-            <p>No admins found with the given search term.</p>
+        <?php elseif (isset($_POST['search'])) : ?>
+            <p>No user found with the given search term.</p>
         <?php endif; ?>
     </div>
 </body>
+
 </html>
