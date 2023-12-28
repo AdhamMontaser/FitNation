@@ -13,101 +13,22 @@ body {
   background-color: rgb(21, 21, 21);
 }
 
-.navigation-bar {
-  display: flex;
-  align-items: center;
-  height: 100px; /* Set a fixed height for the navigation bar */
-  background-color: transparent;
-  padding: 0% 5%; /* Add padding to the sides */
-  position: sticky;
+#logo{
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 9%;
 }
 
-.navigation-bar-logo {
-  display: flex;
-  align-items: center;
-}
-
-.navigation-bar img {
-  width: 100%;
-  max-height: 50px; /* Adjust as needed */
-}
-
-.navigation-bar-options {
-  list-style: none;
-  margin-left: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1; /* Allow options to take remaining space */
-}
-
-.navigation-bar li {
-  text-transform: capitalize;
-  width: 50px;
-  transition: font-size, font-weight;
-  margin-right: 80px; /* Adjust as needed */
-  color: white;
-  font-size: 24px; /* Adjust as needed */
-}
-
-.navigation-bar li:hover {
-  font-size: 30px; /* Adjust as needed */
-  font-weight: bolder;
-}
-
-.navigation-bar a {
+#home{
   text-decoration: none;
-  color: white;
-}
-
-/* Media Query for smaller screens */
-@media screen and (max-width: 600px) {
-  .navigation-bar {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  .navigation-bar-options {
-    flex-grow: 0; /* Do not allow options to take remaining space */
-  }
-
-  .navigation-bar li {
-    margin-right: 0;
-    margin-bottom: 10px; /* Adjust as needed */
-    text-align: center;
-  }
-
-  .navigation-bar li:hover {
-    font-size: 14px;
-  }
-}
-/*gded*/
-.navigation-bar-scrolled {
-  background-color: rgb(55, 4, 4);
-  transition: background-color 1s ease;
-}
-
-.sign-in-button {
-  height: 55px;
-  width: 180px;
-  text-transform: uppercase;
-  background: linear-gradient(to right, red 50%, darkred 50%);
-  background-size: 200% 100%;
-  color: white;
-  border: 2px solid white;
-  font-size: 18px;
-  transition: background-position 0.2s;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 19pt;
   font-weight: bold;
-}
-
-.sign-in-button:hover {
-  background-position: -100% 0;
+  position: absolute;
+  top: 3.5%;
+  left: 13%;
+  color: white;
+  cursor: pointer;
 }
 
 #feed{
@@ -121,11 +42,11 @@ body {
   border-radius: 10px;
   color: white;
   width: 65%;
-  /* height: 41%; */
   position: relative;
   top: 2%;
-  left: -3.5%;
+  /* left: -3.5%; */
   display: inline-block;
+  margin-top: 1%;
 }
 
 #info{
@@ -135,14 +56,14 @@ body {
 }
 
 #userImg {
-  width: 15%;
+  width: 13%;
   padding: 2%;
-  border-radius: 39%;
+  border-radius: 42%;
 }
 
 #Name {
   padding: 3%;
-  font-size: 24pt;
+  font-size: 30pt;
 }
 
 #userName {
@@ -200,7 +121,7 @@ body {
   height: 7%;
   width: 4%;
   top: 91%;
-  left: 62%;
+  left: 60%;
 }
 
 #rightSide {
@@ -217,11 +138,11 @@ body {
   position: absolute;
   width: 96%;
   height: 28%;
-  top: 15%;
+  top: 1%;
   left: 1%;
   text-align: center;
   justify-items: center;
-  background-color: #700000;
+  background-color: #80000f;
   border-radius: 10px;
 }
 
@@ -251,7 +172,7 @@ body {
 
 #pushUp {
   padding: 1% 3%;
-  background-color: red;
+  background-color: white;
   font-size: 12pt;
   border: unset;
   position: absolute;
@@ -269,7 +190,7 @@ body {
   background-color: #c50000;
   position: absolute;
   left: 21%;
-  top: 45%;
+  top: 30%;
   border-radius: 9px;
   color: white;
   width: 58%;
