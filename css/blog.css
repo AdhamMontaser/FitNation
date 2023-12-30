@@ -77,10 +77,6 @@ body {
   color: gray;
 }
 
-#postContent {
-  /* position: absolute; */
-}
-
 #postText {
   padding-left: 2%;
   font-size: 17pt;
@@ -90,11 +86,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#postImg {
-  /* width: 10%;
-  height: 10%; */
 }
 
 #postIcons {
