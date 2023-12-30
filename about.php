@@ -94,7 +94,7 @@
       <tr>
         <td colspan="2">
           <h3>
-            klam 3an el website...!!
+            "FitNation: Where fitness meets innovation. Our AI-tailored workouts redefine your routine, complemented by tantalizing recipes for a holistic journey. Find us at the heart of the city, a hub of motivation and progress. Engage in exhilarating competitions that inspire and push boundaries, all part of our commitment to your wellness journey."
           </h3>
         </td>
       </tr>

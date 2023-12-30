@@ -1,3 +1,13 @@
+<?php //blog.php
+session_start();
+if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+    header('Location: login.php');
+    exit();
+}
+// echo $_SESSION['uname'];
+$con = new mysqli('localhost', 'root', '', 'fitnation');
+
+?>
 <html>
 
 <head>
@@ -7,74 +17,63 @@
 </head>
 
 <body>
-    <nav>
-        <div class="navigation-bar">
-            <div class="navigation-bar-logo">
-                <a href="index.php">
-                    <img src="assets/img/logo.png" alt="logo" />
-                </a>
+    <img src="assets/img/logo.png" id="logo">
+    <a href="index.php" id="home">Home</a>
+
+    <div id="feed">
+
+        <img src="assets/icons/upIcon.png" id="upImg">
+
+        <?php
+        $stmt = $con->prepare('select Id , UserPosted , Likes , Time , Text , Image from posts');
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $posts = array();
+
+        while ($post = $result->fetch_assoc()) {
+            $stmt2 = $con->prepare('select First_Name from user where Username = ?');
+            $stmt2->bind_param("s", $post["UserPosted"]);
+            $stmt2->execute();
+            $result2 = $stmt2->get_result();
+            $fname = $result2->fetch_assoc();
+
+        ?>
+            <br>
+            <div id="post">
+                <div id="info">
+                    <img src="assets/icons/userProfile.png" id="userImg">
+                    <span id="Name"><?php echo $fname['First_Name']; ?> </span>
+                    <span id="userName"><?php echo $post["UserPosted"]; ?> </span>
+                    <span id="time"><?php echo $post["Time"]; ?></span>
+                </div>
+                <div id="postContent">
+                    <div id="postText">
+                        <p><?php echo $post["Text"]; ?></p>
+                    </div>
+                    <div id='divPostImg'><img id="postImg" src="<?php echo $post["Image"]; ?>"></div>
+                </div>
+                <div id="postIcons">
+                    <span style="margin-right: 1%;"><?php echo $post["Likes"]; ?></span>
+                    <?php $LikeId = $post["Id"];
+                    echo "<a href=\"DB/connections/addLike.php?id=$LikeId\"><img id=\"like\" src=\"assets/icons/like2.png\"></a>" ?>
+                    <!-- <?php $saveId = $post["Id"];
+                            echo "<a href=\"DB/connections/addSave.php?id=$saveId\"><img id=\"save\" src=\"assets/icons/save.png\"></a>" ?> -->
+                    <!-- <a href="DB/connections/addSave.php"><img id="save" src="assets/icons/save.png"></a> -->
+                </div>
             </div>
-            <ul class="navigation-bar-options">
-                <li><a href="index.php">home</a></li>
-                <li><a href="about.php">about</a></li>
-                <li><a href="blog.php">blog</a></li>
-                <li><a href="worldmap.html">locations</a></li>
-            </ul>
-            <?php
-            session_start();
-            if (isset($_SESSION['user'])) {
-                echo '<a href="logout.php"><button class="sign-in-button">sign out</button></a>';
-            } else {
-                echo '<a href="login.php"><button class="sign-in-button">sign in</button></a>';
-            }
-            ?>
 
-        </div>
-    </nav>
+        <?php }
 
-    <div id="posts">
+        $stmt->close();
+        ?>
 
-        <img src="assets/icons/upImg.png" id="upImg">
-
-        <table id="tableFeed">
-            <tr id="tableRow">
-                <td id="tdImg"><img src="assets/img/team2.png" id="userImg"></td>
-                <td class="tdTable"><span id="Name"><?php echo "Ali" . "hisham" ?> </span></td>
-                <td class="tdTable"><span id="userName"><?php echo "ali123" ?> </span></td>
-                <td id="tdTime"><span id="time"><?php echo "2 weeks ago" ?></span></td>
-                <td id="test"></td>
-                <td id="test"></td>
-            </tr>
-            <tr>
-                <td colspan="4">
-                    <p id="postText"><?php echo "WELCOME to our blog" ?></p>
-                    <span id="postImg"></span>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="4">
-                    <a href="" id="like"><img src="assets/icons/dumbell.png"></a>
-                </td>
-            </tr>
-            <!-- <tr><td>
-                <img src="assets/img/team3.png" id="userImg">
-                <span><?php echo "Ali" . "hisham" ?> </span>
-                <span><?php echo "ali123" ?> </span>
-                <span><?php echo "2 weeks ago" ?></span>
-                <p><?php echo "WELCOME to our blog" ?></p>
-            </td></tr> -->
-        </table>
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <p style="color:aqua">test</p>
     </div>
 
     <div id="rightSide">
         <form action="DB/connections/insertpost.php" method="post" id="newPost">
             <textarea name="textarea" id="textarea" placeholder="Whats on your mind" required></textarea><br>
-            <input type="file" name="image" style="padding-top: 50%;" id="image">
+            <!-- <input type="file" name="image" style="padding-top: 50%;" id="image"> -->
             <img src="assets/icons/uploadImg.png" id="uploadImg">
             <input type="submit" value="Push up" id="pushUp">
         </form>
