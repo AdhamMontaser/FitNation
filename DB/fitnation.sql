@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2023 at 11:04 PM
+-- Generation Time: Dec 28, 2023 at 07:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -44,6 +44,18 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`ID`, `Username`, `First_Name`, `Second_Name`, `Phone_Number`, `Email`, `Password`) VALUES
 (123216, 'mozaky11', 'Mohamed', 'Emad', '212121212121', 'momomomomom@gmail.com', 'momo123'),
 (123217, 'asad', 'dsada', 'dsad', '232131', 'dsad@mail.com', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favorite posts`
+--
+
+CREATE TABLE `favorite posts` (
+  `Id` int(11) NOT NULL,
+  `UserPosted` varchar(30) NOT NULL,
+  `PostId` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -92,6 +104,34 @@ INSERT INTO `gym` (`Gym_Name`, `Address`, `Phone_Number`, `ID`, `latitude`, `lon
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `Id` int(11) NOT NULL,
+  `UserPosted` varchar(30) NOT NULL,
+  `Likes` int(11) NOT NULL,
+  `Time` varchar(15) NOT NULL,
+  `Text` varchar(140) NOT NULL,
+  `Image` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`Id`, `UserPosted`, `Likes`, `Time`, `Text`, `Image`) VALUES
+(1, 'Array', 10, '28-12-2023', 'hello', ''),
+(17, 'Array', 0, '28-12-2023', 'whats up guys', ''),
+(28, 'Array', 0, '28-12-2023', 'm4 3ayza te4ta8al', ''),
+(29, 'Array', 2, '28-12-2023', 'leg day:\r\n1234', ''),
+(30, 'Array', 0, '28-12-2023', 'gym timeeeee', ''),
+(31, 'Array', 1, '28-12-2023', 'push day', ''),
+(32, 'Array', 0, '28-12-2023', 'going to the gym', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -113,7 +153,10 @@ INSERT INTO `user` (`ID`, `First_Name`, `Last_Name`, `Username`, `Password`, `Em
 (12, 'Mohamed', 'Emad', 'Mozaky11', '2yBA4vS/6IPUo', 'mohamedzaky970@gmail.com', 1015118963),
 (13, 'Ali', 'Hesham', 'AliHesham', '2yMJyD0vkovog', 'ali@rgola.com', 1015118954),
 (14, 'dsad', 'dsad', 'Mozaky111', '2yG9q7O7s42BI', 'mohamedzaky970@gmail.com', 1015118965),
-(15, 'adham', 'adham', 'adham', '2yOBG.zch./yw', 'adhamdod2003@gmail.com', 1015118954);
+(15, 'adham', 'adham', 'adham', '2yOBG.zch./yw', 'adhamdod2003@gmail.com', 1015118954),
+(16, 'mohamed', 'hisham', 'Array', '2yG9q7O7s42BI', 'Array@gmail.com', 2147483647),
+(17, 'Ali', 'Hisham', 'ali', '2yf3FGLvoJBHE', 'alihisham26m@gmail.com', 2147483647),
+(18, 'Ali', 'Hisham', 'sassy', '2yh2K0XuF2iUQ', 'sassyyy@gmail.com', 2147483647);
 
 --
 -- Indexes for dumped tables
@@ -138,6 +181,12 @@ ALTER TABLE `gym`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -160,10 +209,16 @@ ALTER TABLE `gym`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
