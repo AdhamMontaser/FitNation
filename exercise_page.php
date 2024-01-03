@@ -84,7 +84,7 @@ $paginatedExercises = array_slice($filteredExercises, $startIndex, $exercisesPer
       }
 
       function removeFromFavorites(exerciseId, user) {
-        var username = "<?php echo isset($_SESSION['user']['Username']) ? $_SESSION['user']['Username'] : 'REALLY NIGGA' ?>";
+        var username = "<?php echo isset($_SESSION['user']['Username']) ? $_SESSION['user']['Username'] : '' ?>";
         $.ajax({
           url: "DB/connections/favorite_exercises.php",
           type: "POST",

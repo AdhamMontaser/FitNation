@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2023 at 07:26 AM
+-- Generation Time: Jan 03, 2024 at 09:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -73,9 +73,10 @@ CREATE TABLE `favorite_exercises` (
 --
 
 INSERT INTO `favorite_exercises` (`username`, `id`) VALUES
-('Mozaky11', 6),
-('Mozaky11', 1512),
-('Mozaky11', 3294);
+('AliHesham01', 1),
+('AliHesham01', 3),
+('AliHesham01', 6),
+('Mozaky11', 6);
 
 -- --------------------------------------------------------
 
@@ -121,13 +122,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`Id`, `UserPosted`, `Likes`, `Time`, `Text`, `Image`) VALUES
-(1, 'Array', 10, '28-12-2023', 'hello', ''),
-(17, 'Array', 0, '28-12-2023', 'whats up guys', ''),
-(28, 'Array', 0, '28-12-2023', 'm4 3ayza te4ta8al', ''),
-(29, 'Array', 2, '28-12-2023', 'leg day:\r\n1234', ''),
-(30, 'Array', 0, '28-12-2023', 'gym timeeeee', ''),
-(31, 'Array', 1, '28-12-2023', 'push day', ''),
-(32, 'Array', 0, '28-12-2023', 'going to the gym', '');
+(35, 'Mozaky11', 5, '01-01-2024', 'New year, new gym goals.\r\nKeep the grind fellas', ''),
+(36, 'AliHesham01', 7, '01-01-2024', 'Wow, what a feature', ''),
+(37, 'Mozaky11', 0, '01-01-2024', 'Helloo\r\n', ''),
+(38, 'Mozaky11', 0, '01-01-2024', 'Welcome to the blog', ''),
+(39, 'Mozaky11', 0, '01-01-2024', 'Ziad Mahmoud', '');
 
 -- --------------------------------------------------------
 
@@ -150,13 +149,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `First_Name`, `Last_Name`, `Username`, `Password`, `Email`, `Phone_Number`) VALUES
-(12, 'Mohamed', 'Emad', 'Mozaky11', '2yBA4vS/6IPUo', 'mohamedzaky970@gmail.com', 1015118963),
-(13, 'Ali', 'Hesham', 'AliHesham', '2yMJyD0vkovog', 'ali@rgola.com', 1015118954),
-(14, 'dsad', 'dsad', 'Mozaky111', '2yG9q7O7s42BI', 'mohamedzaky970@gmail.com', 1015118965),
+(12, 'Mohamed', 'Emad', 'Mozaky11', '2yY.2UcrCJEAE', 'mohamedzaky970@gmail.com', 1015118963),
 (15, 'adham', 'adham', 'adham', '2yOBG.zch./yw', 'adhamdod2003@gmail.com', 1015118954),
-(16, 'mohamed', 'hisham', 'Array', '2yG9q7O7s42BI', 'Array@gmail.com', 2147483647),
 (17, 'Ali', 'Hisham', 'ali', '2yf3FGLvoJBHE', 'alihisham26m@gmail.com', 2147483647),
-(18, 'Ali', 'Hisham', 'sassy', '2yh2K0XuF2iUQ', 'sassyyy@gmail.com', 2147483647);
+(19, 'Ali', 'Hesham', 'AliHesham01', '2yMJyD0vkovog', 'alidod@gmail.com', 1016878952);
 
 --
 -- Indexes for dumped tables
@@ -212,13 +208,13 @@ ALTER TABLE `gym`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
