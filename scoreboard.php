@@ -31,6 +31,10 @@
             margin-top: 30px;
             /* Add space above the heading */
         }
+        h1{
+            align-items: center;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -41,6 +45,8 @@
     // Select all data from the score_board table and order by Score in descending order
     $query = "SELECT * FROM score_board ORDER BY score DESC";
     $result = mysqli_query($con, $query);
+
+    echo "<h1>Push Up challenge</h1>";
 
     if (mysqli_num_rows($result) > 0) {
         // Output data in a table
