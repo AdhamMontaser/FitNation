@@ -38,6 +38,7 @@
           <li><a href="#pricing-reach-section">pricing</a></li>
           <li><a href="blog.php">blog</a></li>
           <li><a href="worldmap.html">locations</a></li>
+          <li><a href="scoreboard.php">score board</a></li>
         </ul>
         <?php
         session_start();
