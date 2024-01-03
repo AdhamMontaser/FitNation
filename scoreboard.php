@@ -1,22 +1,35 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <style>
         table {
-            border-collapse: collapse;
             width: 50%;
             margin: 20px auto;
+            /* Center the table horizontally and add space around it */
+            border-collapse: collapse;
+
         }
 
         th,
         td {
-            border: 1px solid #dddddd;
+            padding: 10px;
+            border: 1px solid #343A40;
             text-align: left;
-            padding: 8px;
+            text-transform: capitalize;
+            font-size: 3vh;
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #343A40;
+            color: white;
+            font-size: 4vh;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            /* Add space above the heading */
         }
     </style>
 </head>
@@ -25,9 +38,9 @@
     <?php
     include('DB/config.php');
 
-    // Select all data from the score_board table
-    $query = "SELECT * FROM score_board";
-    $result = mysqli_query($connection, $query);
+    // Select all data from the score_board table and order by Score in descending order
+    $query = "SELECT * FROM score_board ORDER BY score DESC";
+    $result = mysqli_query($con, $query);
 
     if (mysqli_num_rows($result) > 0) {
         // Output data in a table
@@ -44,7 +57,8 @@
         echo "0 results";
     }
 
-    mysqli_close($connection);
+    mysqli_close($con);
     ?>
-
 </body>
+
+</html>

@@ -7,7 +7,7 @@ $score = $_SESSION['newScore'];
 
 // Check if the username exists in the database
 $query = "SELECT * FROM score_board WHERE Username = '$username'";
-$result = mysqli_query($connection, $query);
+$result = mysqli_query($con, $query);
 
 if (mysqli_num_rows($result) > 0) {
     // Username exists, check if the score is less than the new score
@@ -17,7 +17,7 @@ if (mysqli_num_rows($result) > 0) {
     if ($score > $currentScore) {
         // Update the score if the new score is higher
         $updateQuery = "UPDATE score_board SET score = $score WHERE Username = '$username'";
-        mysqli_query($connection, $updateQuery);
+        mysqli_query($con, $updateQuery);
         echo "Score updated successfully!";
     } else {
         // Keep the score the same
@@ -26,8 +26,8 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     // Username doesn't exist, add the username and score
     $insertQuery = "INSERT INTO score_board (Username, score) VALUES ('$username', $score)";
-    mysqli_query($connection, $insertQuery);
+    mysqli_query($con, $insertQuery);
     echo "Username and score added!";
 }
 
-mysqli_close($connection);
+mysqli_close($con);

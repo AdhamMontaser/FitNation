@@ -35,7 +35,7 @@
         <ul class="navigation-bar-options">
           <li><a href="">home</a></li>
           <li><a href="about.php">about</a></li>
-          <li><a href="#pricing-reach-section">pricing</a></li>
+          <li><a href="fitmotionai.php">challenge</a></li>
           <li><a href="blog.php">blog</a></li>
           <li><a href="worldmap.html">locations</a></li>
           <li><a href="scoreboard.php">score board</a></li>
