@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2024 at 09:19 PM
+-- Generation Time: Jan 04, 2024 at 12:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -131,6 +131,17 @@ INSERT INTO `posts` (`Id`, `UserPosted`, `Likes`, `Time`, `Text`, `Image`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `score_board`
+--
+
+CREATE TABLE `score_board` (
+  `Username` varchar(30) NOT NULL,
+  `score` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -181,6 +192,12 @@ ALTER TABLE `gym`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `score_board`
+--
+ALTER TABLE `score_board`
+  ADD PRIMARY KEY (`Username`,`score`);
 
 --
 -- Indexes for table `user`
