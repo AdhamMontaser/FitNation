@@ -152,6 +152,11 @@ body {
   padding-left: 2%;
 }
 
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
 #uploadImg {
   position: absolute;
   width: 7%;
