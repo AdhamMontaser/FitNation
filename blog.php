@@ -57,9 +57,6 @@ $con = new mysqli('localhost', 'root', '', 'fitnation');
                     <span style="margin-right: 1%;"><?php echo $post["Likes"]; ?></span>
                     <?php $LikeId = $post["Id"];
                     echo "<a href=\"DB/connections/addLike.php?id=$LikeId\"><img id=\"like\" src=\"assets/icons/like2.png\"></a>" ?>
-                    <!-- <?php $saveId = $post["Id"];
-                            echo "<a href=\"DB/connections/addSave.php?id=$saveId\"><img id=\"save\" src=\"assets/icons/save.png\"></a>" ?> -->
-                    <!-- <a href="DB/connections/addSave.php"><img id="save" src="assets/icons/save.png"></a> -->
                 </div>
             </div>
 
