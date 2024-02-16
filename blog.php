@@ -70,12 +70,8 @@ $con = new mysqli('localhost', 'root', '', 'fitnation');
     <div id="rightSide">
         <form action="DB/connections/insertpost.php" method="post" id="newPost">
             <textarea name="textarea" id="textarea" placeholder="Whats on your mind" required></textarea><br>
-            <!-- <input type="file" name="image" style="padding-top: 50%;" id="image"> -->
-            <!-- <img src="assets/icons/uploadImg.png" id="uploadImg"> -->
             <input type="submit" value="Push up" id="pushUp">
         </form>
-
-        <!-- <a href="favoritePosts" id="favPosts">Favorite posts</a> -->
     </div>
 
     <script>
